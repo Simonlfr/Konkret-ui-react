@@ -8,7 +8,9 @@ export function HomePage(): JSX.Element {
     <Container>
       <div>
         <h2>Button</h2>
-        <Button variant="fill">asdas</Button>
+        <Button variant="fill">
+          <Button.text>asdas</Button.text>
+        </Button>
       </div>
       <ColorLegend />
     </Container>
