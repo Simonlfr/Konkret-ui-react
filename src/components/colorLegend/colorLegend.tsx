@@ -3,6 +3,7 @@ import {
   ColorShade,
   generateColorPalette,
 } from "../../utils/generateColorPalette";
+import { HeadlineMedium, SubtitleLargeCss } from "../typography/typography";
 
 function getText(shade: number): string {
   if (shade === 0) return "Ref";
@@ -37,7 +38,7 @@ export function ColorLegend(): JSX.Element {
 
   return (
     <Container>
-      <h2>Reference Colors</h2>
+      <HeadlineMedium>Reference colors</HeadlineMedium>
       <Palette colorPalette={colorPrimary} />
       <Palette colorPalette={colorSecondary} />
       <Palette colorPalette={colorError} />
@@ -69,9 +70,5 @@ const ColorContainer = styled.div`
   width: 64px;
   height: 108px;
   padding: 8px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 140%;
-  letter-spacing: 0.1px;
+  ${SubtitleLargeCss}
 `;
