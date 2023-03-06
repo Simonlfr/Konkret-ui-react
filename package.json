@@ -6,15 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:playwright": "playwright test -c playwright-ct.config.ts",
+    "test:playwright:update": "playwright test -c playwright.config.ts --update-snapshots",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^4.5.11",
+    "@playwright/experimental-ct-react": "^1.31.2",
+    "playwright-core": "^1.31.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.31.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/styled-components": "^5.1.26",
