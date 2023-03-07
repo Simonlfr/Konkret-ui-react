@@ -37,7 +37,7 @@ const colorNeutral = convertArrayToObject(
   generateColorPalette("#5D7398", colorRange)
 );
 
-const colors = {
+const colors: colorPalette = {
   primary: {
     primaryRef: colorPrimary["0"],
     onPrimary: colorPrimary["100"],
