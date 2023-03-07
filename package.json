@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test:playwright": "playwright test -c playwright-ct.config.ts",
-    "test:playwright:update": "playwright test -c playwright.config.ts --update-snapshots",
+    "test:playwright:update": "playwright test -c playwright-ct.config.ts --update-snapshots",
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {

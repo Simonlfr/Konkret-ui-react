@@ -5,7 +5,6 @@ export const headlineLargeCss = css`
   font-style: normal;
   font-weight: 400;
   font-size: 57px;
-  font-variant: small-caps;
   line-height: 140%;
   letter-spacing: -0.25px;
 `;

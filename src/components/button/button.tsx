@@ -29,11 +29,7 @@ export function Button(props: ButtonProps): JSX.Element {
   return <DestructiveButton {...props}>{innerContent}</DestructiveButton>;
 }
 
-function Text(props: { children: React.ReactNode }): JSX.Element {
-  return <ButtonTypography>{props.children}</ButtonTypography>;
-}
-
-Button.text = Text;
+Button.text = ButtonTypography;
 
 const StyledBaseButtonCSS = css`
   display: flex;

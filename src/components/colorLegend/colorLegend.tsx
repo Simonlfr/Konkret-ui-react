@@ -19,7 +19,7 @@ function Palette(props: { colorPalette: ColorShade[] }): JSX.Element {
           key={index}
           style={{
             backgroundColor: color.color,
-            color: color.shade < 10 ? "#fff" : "#000",
+            color: color.shade <= 0 ? "#fff" : "#000",
           }}
         >
           {getText(color.shade)}
