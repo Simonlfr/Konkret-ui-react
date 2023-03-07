@@ -1,11 +1,14 @@
 import "./App.css";
 import { HomePage } from "./pages/homePage";
+import { ColorProvider } from "./providers/colorProvider";
 
 function App() {
   return (
-    <div className="App">
-      <HomePage />
-    </div>
+    <ColorProvider>
+      <div className="App">
+        <HomePage />
+      </div>
+    </ColorProvider>
   );
 }
 

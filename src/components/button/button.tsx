@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { useColorPalette } from "../../providers/colorProvider";
 import { ButtonTypography } from "../typography/typography";
 
 type ButtonProps = {
@@ -11,6 +12,8 @@ type ButtonProps = {
 
 export function Button(props: ButtonProps): JSX.Element {
   const { children, rightIcon, leftIcon, variant = "fill" } = props;
+  const colorPalette = useColorPalette();
+  const backgroundColor = colorPalette.primary.primaryRef;
 
   const innerContent = (
     <>
@@ -21,7 +24,11 @@ export function Button(props: ButtonProps): JSX.Element {
   );
 
   if (variant === "fill")
-    return <FillButton {...props}>{innerContent}</FillButton>;
+    return (
+      <FillButton {...props} style={{ backgroundColor: backgroundColor }}>
+        {innerContent}
+      </FillButton>
+    );
   if (variant === "outline")
     return <OutlineButton {...props}>{innerContent}</OutlineButton>;
   if (variant === "text")
