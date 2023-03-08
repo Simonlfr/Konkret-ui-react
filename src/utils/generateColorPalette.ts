@@ -32,12 +32,12 @@ export function generateColorPalette(
         Math.floor((shade / 100) * (shade < 0 ? baseBlue : 255 - baseBlue))
     );
 
-    const rgba = `rgba(${red}, ${green}, ${blue}, 1)`;
+    const rgb = `rgb(${red}, ${green}, ${blue})`;
     const hex = `#${((red << 16) | (green << 8) | blue)
       .toString(16)
       .padStart(6, "0")}`;
 
-    return { shade: shade, color: shade < 0 ? hex : rgba };
+    return { shade: shade, color: shade < 0 ? hex : rgb };
   });
 
   return colors;
