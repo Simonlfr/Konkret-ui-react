@@ -2,3 +2,6 @@
 
 # Konkret-ui-react
 Konkret-ui-react is a React component library based on the design system created by @pfdamm, which can be found at peterdamm.dk.
+
+## Hosting
+You can see the production build on https://konkret-ui.com
