@@ -9,9 +9,20 @@ export function HomePage(): JSX.Element {
     <Container>
       <div>
         <HeadlineMedium>Button</HeadlineMedium>
-        <Button variant="fill">
-          <Button.text>asdas</Button.text>
-        </Button>
+        <ButtonContainer>
+          <Button variant="fill">
+            <Button.text>Fill</Button.text>
+          </Button>
+          <Button variant="outline">
+            <Button.text>Outline</Button.text>
+          </Button>
+          <Button variant="text">
+            <Button.text>Text</Button.text>
+          </Button>
+          <Button variant="destructive">
+            <Button.text>Error</Button.text>
+          </Button>
+        </ButtonContainer>
       </div>
       <ColorLegend />
     </Container>
@@ -19,3 +30,8 @@ export function HomePage(): JSX.Element {
 }
 
 const Container = styled.div``;
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+`;
