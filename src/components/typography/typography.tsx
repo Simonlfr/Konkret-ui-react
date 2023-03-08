@@ -18,7 +18,6 @@ export const headlineMediumCss = css`
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  font-variant: small-caps;
   line-height: 140%;
 `;
 
@@ -31,7 +30,6 @@ export const headlineSmallCss = css`
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  font-variant: small-caps;
   line-height: 140%;
 `;
 
@@ -125,7 +123,6 @@ export const labelCss = css`
   line-height: 140%;
 
   letter-spacing: 0.5px;
-  font-variant: small-caps;
 `;
 
 export const Label = styled.label`
