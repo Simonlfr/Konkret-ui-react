@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { useColorPalette } from "../../providers/colorProvider";
+import { convertToRgba } from "../../utils/convertToRGBA";
 import { ButtonTypography } from "../typography/typography";
 
 type ButtonProps = {
@@ -13,7 +14,6 @@ type ButtonProps = {
 export function Button(props: ButtonProps): JSX.Element {
   const { children, rightIcon, leftIcon, variant = "fill" } = props;
   const colorPalette = useColorPalette();
-  const backgroundColor = colorPalette.primary.primaryRef;
 
   const innerContent = (
     <>
@@ -25,15 +25,47 @@ export function Button(props: ButtonProps): JSX.Element {
 
   if (variant === "fill")
     return (
-      <FillButton {...props} style={{ backgroundColor: backgroundColor }}>
+      <FillButton
+        bgColor={colorPalette.primary.primaryRef}
+        modifier={colorPalette.primary.onPrimaryTint}
+        {...props}
+      >
         {innerContent}
       </FillButton>
     );
   if (variant === "outline")
-    return <OutlineButton {...props}>{innerContent}</OutlineButton>;
+    return (
+      <OutlineButton
+        bgColor={colorPalette.neutral.light}
+        modifier={colorPalette.primary.primaryRef}
+        textColor={colorPalette.neutral.link}
+        boderColor={colorPalette.primary.primaryTint}
+        {...props}
+      >
+        {innerContent}
+      </OutlineButton>
+    );
   if (variant === "text")
-    return <TextButton {...props}>{innerContent}</TextButton>;
-  return <DestructiveButton {...props}>{innerContent}</DestructiveButton>;
+    return (
+      <TextButton
+        bgColor={colorPalette.neutral.light}
+        modifier={colorPalette.primary.primaryRef}
+        textColor={colorPalette.neutral.link}
+        boderColor={colorPalette.primary.primaryTint}
+        {...props}
+      >
+        {innerContent}
+      </TextButton>
+    );
+  return (
+    <DestructiveButton
+      bgColor={colorPalette.error.errorRef}
+      modifier={colorPalette.error.onErrorTint}
+      {...props}
+    >
+      {innerContent}
+    </DestructiveButton>
+  );
 }
 
 Button.text = ButtonTypography;
@@ -47,31 +79,102 @@ const StyledBaseButtonCSS = css`
   border-radius: 8px;
   border: none;
   cursor: pointer;
-`;
-const FillButton = styled.button`
-  ${StyledBaseButtonCSS}
-  background-color: #4e4bfb;
-  color: white;
   box-shadow: 0px 2px 16px 4px rgba(220, 219, 254, 0.32),
     0px 4px 12px rgba(78, 75, 251, 0.32), 0px 2px 4px rgba(78, 75, 251, 0.24);
-
+`;
+const FillButton = styled.button<{ bgColor: string; modifier: string }>`
+  ${StyledBaseButtonCSS}
+  color: white;
+  background-color: ${({ bgColor }) => bgColor};
+  box-shadow: 0px 2px 16px 4px rgba(220, 219, 254, 0.32),
+    0px 4px 12px rgba(78, 75, 251, 0.32), 0px 2px 4px rgba(78, 75, 251, 0.24);
   &:hover {
-    background-color: rgba(31, 30, 100, 0.32);
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.32)},
+      0px 2px 16px 4px rgba(220, 219, 254, 0.32),
+      0px 8px 12px rgba(78, 75, 251, 0.32), 0px 4px 8px rgba(78, 75, 251, 0.24);
   }
 
   &:active {
-    background-color: rgba(31, 30, 100, 0.64);
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.64)},
+      0px 2px 16px 4px rgba(220, 219, 254, 0.32),
+      0px 4px 12px rgba(78, 75, 251, 0.32), 0px 2px 4px rgba(78, 75, 251, 0.4);
   }
 `;
-const OutlineButton = styled.button`
+
+const OutlineButton = styled.button<{
+  bgColor: string;
+  modifier: string;
+  textColor: string;
+  boderColor: string;
+}>`
   ${StyledBaseButtonCSS}
-  background-color: red;
+  background-color: ${({ bgColor }) => bgColor};
+  box-shadow: 0px 0px 16px 4px rgba(220, 219, 254, 0.24),
+    0px 0px 12px rgba(78, 75, 251, 0.16), 0px 0px 4px rgba(78, 75, 251, 0.08);
+  border: 1px solid ${({ boderColor }) => boderColor};
+  color: ${({ textColor }) => textColor};
+  &:hover {
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.12)},
+      0px 0px 16px 4px rgba(220, 219, 254, 0.24),
+      0px 0px 12px rgba(78, 75, 251, 0.16), 0px 0px 4px rgba(78, 75, 251, 0.08);
+  }
+
+  &:active {
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.24)},
+      0px 0px 16px 4px rgba(220, 219, 254, 0.24),
+      0px 0px 12px rgba(78, 75, 251, 0.16), 0px 0px 4px rgba(78, 75, 251, 0.08);
+  }
 `;
-const TextButton = styled.button`
+const TextButton = styled.button<{
+  bgColor: string;
+  modifier: string;
+  textColor: string;
+  boderColor: string;
+}>`
   ${StyledBaseButtonCSS}
-  background-color: red;
+  box-shadow: none;
+  border: 1px solid white;
+  background-color: white;
+  color: ${({ textColor }) => textColor};
+  &:hover {
+    background-color: ${({ bgColor }) => bgColor};
+    border: 1px solid ${({ boderColor }) => boderColor};
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.12)},
+      0px 0px 16px 4px rgba(220, 219, 254, 0.24);
+    filter: drop-shadow(0px 0px 12px rgba(78, 75, 251, 0.16))
+      drop-shadow(0px 0px 8px rgba(78, 75, 251, 0.08));
+  }
+
+  &:active {
+    background-color: ${({ bgColor }) => bgColor};
+    border: 1px solid ${({ modifier }) => convertToRgba(modifier, 0.24)};
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.24)},
+      0px 0px 16px 4px rgba(220, 219, 254, 0.24);
+  }
 `;
-const DestructiveButton = styled.button`
+const DestructiveButton = styled.button<{ bgColor: string; modifier: string }>`
   ${StyledBaseButtonCSS}
-  background-color: red;
+  color: white;
+  background-color: ${({ bgColor }) => bgColor};
+  box-shadow: 0px 2px 16px 4px rgba(239, 173, 190, 0.32),
+    0px 4px 12px rgba(215, 51, 92, 0.32), 0px 2px 4px rgba(215, 51, 92, 0.24);
+  &:hover {
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.32)},
+      0px 2px 16px 4px rgba(239, 173, 190, 0.32),
+      0px 8px 12px rgba(215, 51, 92, 0.32), 0px 4px 8px rgba(215, 51, 92, 0.24);
+  }
+
+  &:active {
+    box-shadow: inset 0px 0px 0px 100vmax
+        ${({ modifier }) => convertToRgba(modifier, 0.64)},
+      0px 2px 16px 4px rgba(239, 173, 190, 0.32),
+      0px 4px 12px rgba(215, 51, 92, 0.32), 0px 2px 4px rgba(215, 51, 92, 0.4);
+  }
 `;
