@@ -31,7 +31,7 @@ const colorSecondary = convertArrayToObject(
   generateColorPalette("#3E737B", colorRange)
 );
 const colorError = convertArrayToObject(
-  generateColorPalette("#D13E4A", colorRange)
+  generateColorPalette("#D7335C", colorRange)
 );
 const colorNeutral = convertArrayToObject(
   generateColorPalette("#5D7398", colorRange)
