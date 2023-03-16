@@ -1,6 +1,5 @@
 export function convertToRgba(color: string, alpha: number): string {
   let red: number, green: number, blue: number;
-  console.log(color);
   const rgbMatch = color.match(/rgb\((\d+), (\d+), (\d+)\)/);
 
   if (rgbMatch) {
