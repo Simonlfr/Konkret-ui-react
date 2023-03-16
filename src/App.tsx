@@ -1,14 +1,14 @@
 import "./App.css";
 import { HomePage } from "./pages/homePage";
-import { ColorProvider } from "./providers/colorProvider";
+import { useColorPalette } from "./providers/colorProvider";
+import { DesignTokenProvider } from "./providers/designTokenProvider";
 
 function App() {
+  const colorPalette = useColorPalette();
   return (
-    <ColorProvider>
-      <div className="App">
-        <HomePage />
-      </div>
-    </ColorProvider>
+    <DesignTokenProvider colorPalette={colorPalette}>
+      <HomePage />
+    </DesignTokenProvider>
   );
 }
 

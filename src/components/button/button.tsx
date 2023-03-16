@@ -1,7 +1,6 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { useColorPalette } from "../../providers/colorProvider";
-import { convertToRgba } from "../../utils/convertToRGBA";
+import styled, { css, DefaultTheme } from "styled-components";
+import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
 import { ButtonTypography } from "../typography/typography";
 
 type ButtonProps = {
@@ -13,7 +12,6 @@ type ButtonProps = {
 
 export function Button(props: ButtonProps): JSX.Element {
   const { children, rightIcon, leftIcon, variant = "fill" } = props;
-  const colorPalette = useColorPalette();
 
   const innerContent = (
     <>
@@ -23,49 +21,11 @@ export function Button(props: ButtonProps): JSX.Element {
     </>
   );
 
-  if (variant === "fill")
-    return (
-      <FillButton
-        bgColor={colorPalette.primary.primaryRef}
-        modifier={colorPalette.primary.onPrimaryTint}
-        {...props}
-      >
-        {innerContent}
-      </FillButton>
-    );
+  if (variant === "fill") return <FillButton>{innerContent}</FillButton>;
   if (variant === "outline")
-    return (
-      <OutlineButton
-        bgColor={colorPalette.neutral.light}
-        modifier={colorPalette.primary.primaryRef}
-        textColor={colorPalette.neutral.link}
-        boderColor={colorPalette.primary.primaryTint}
-        {...props}
-      >
-        {innerContent}
-      </OutlineButton>
-    );
-  if (variant === "text")
-    return (
-      <TextButton
-        bgColor={colorPalette.neutral.light}
-        modifier={colorPalette.primary.primaryRef}
-        textColor={colorPalette.neutral.link}
-        boderColor={colorPalette.primary.primaryTint}
-        {...props}
-      >
-        {innerContent}
-      </TextButton>
-    );
-  return (
-    <DestructiveButton
-      bgColor={colorPalette.error.errorRef}
-      modifier={colorPalette.error.onErrorTint}
-      {...props}
-    >
-      {innerContent}
-    </DestructiveButton>
-  );
+    return <OutlineButton>{innerContent}</OutlineButton>;
+  if (variant === "text") return <TextButton>{innerContent}</TextButton>;
+  return <DestructiveButton>{innerContent}</DestructiveButton>;
 }
 
 Button.text = ButtonTypography;
@@ -79,102 +39,163 @@ const StyledBaseButtonCSS = css`
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  box-shadow: 0px 2px 16px 4px rgba(220, 219, 254, 0.32),
-    0px 4px 12px rgba(78, 75, 251, 0.32), 0px 2px 4px rgba(78, 75, 251, 0.24);
 `;
-const FillButton = styled.button<{ bgColor: string; modifier: string }>`
+const FillButton = styled.button`
   ${StyledBaseButtonCSS}
-  color: white;
-  background-color: ${({ bgColor }) => bgColor};
-  box-shadow: 0px 2px 16px 4px rgba(220, 219, 254, 0.32),
-    0px 4px 12px rgba(78, 75, 251, 0.32), 0px 2px 4px rgba(78, 75, 251, 0.24);
+  color: ${({ theme }) =>
+    theme
+      ? theme.palette.neutral.lightText
+      : defaultDesignTokens.palette.neutral.lightText};
+  background-color: ${({ theme }) =>
+    theme
+      ? theme.palette.primary.primaryRef
+      : defaultDesignTokens.palette.primary.primaryRef};
+  box-shadow: ${({ theme }) =>
+    theme
+      ? theme.shadows.primaryDarkDefault
+      : defaultDesignTokens.shadows.primaryDarkDefault};
   &:hover {
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.32)},
-      0px 2px 16px 4px rgba(220, 219, 254, 0.32),
-      0px 8px 12px rgba(78, 75, 251, 0.32), 0px 4px 8px rgba(78, 75, 251, 0.24);
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.primaryHoverFocusDark
+          : defaultDesignTokens.stateModifiers.primaryHoverFocusDark},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.primaryDarkHoverFocus
+          : defaultDesignTokens.shadows.primaryDarkHoverFocus};
   }
-
   &:active {
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.64)},
-      0px 2px 16px 4px rgba(220, 219, 254, 0.32),
-      0px 4px 12px rgba(78, 75, 251, 0.32), 0px 2px 4px rgba(78, 75, 251, 0.4);
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.primaryPressedDark
+          : defaultDesignTokens.stateModifiers.primaryPressedDark},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.primaryDarkPressed
+          : defaultDesignTokens.shadows.primaryDarkPressed};
   }
 `;
 
-const OutlineButton = styled.button<{
-  bgColor: string;
-  modifier: string;
-  textColor: string;
-  boderColor: string;
-}>`
+const OutlineButton = styled.button`
   ${StyledBaseButtonCSS}
-  background-color: ${({ bgColor }) => bgColor};
-  box-shadow: 0px 0px 16px 4px rgba(220, 219, 254, 0.24),
-    0px 0px 12px rgba(78, 75, 251, 0.16), 0px 0px 4px rgba(78, 75, 251, 0.08);
-  border: 1px solid ${({ boderColor }) => boderColor};
-  color: ${({ textColor }) => textColor};
+  background-color: ${({ theme }) =>
+    theme
+      ? theme.palette.neutral.lightText
+      : defaultDesignTokens.palette.neutral.lightText};
+  box-shadow: ${({ theme }) =>
+    theme
+      ? theme.shadows.primaryLightDefault
+      : defaultDesignTokens.shadows.primaryLightDefault};
+  border: 1px solid
+    ${({ theme }) =>
+      theme
+        ? theme.palette.primary.primaryTint
+        : defaultDesignTokens.palette.primary.primaryTint};
+  color: ${({ theme }) =>
+    theme
+      ? theme.palette.neutral.link
+      : defaultDesignTokens.palette.neutral.link};
   &:hover {
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.12)},
-      0px 0px 16px 4px rgba(220, 219, 254, 0.24),
-      0px 0px 12px rgba(78, 75, 251, 0.16), 0px 0px 4px rgba(78, 75, 251, 0.08);
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.primaryHoverFocusLight
+          : defaultDesignTokens.stateModifiers.primaryHoverFocusLight},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.primaryLightHoverFocus
+          : defaultDesignTokens.shadows.primaryLightHoverFocus};
   }
-
   &:active {
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.24)},
-      0px 0px 16px 4px rgba(220, 219, 254, 0.24),
-      0px 0px 12px rgba(78, 75, 251, 0.16), 0px 0px 4px rgba(78, 75, 251, 0.08);
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.primaryPressedLight
+          : defaultDesignTokens.stateModifiers.primaryPressedLight},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.primaryLightPressed
+          : defaultDesignTokens.shadows.primaryLightPressed};
   }
 `;
-const TextButton = styled.button<{
-  bgColor: string;
-  modifier: string;
-  textColor: string;
-  boderColor: string;
-}>`
+const TextButton = styled.button`
   ${StyledBaseButtonCSS}
   box-shadow: none;
-  border: 1px solid white;
-  background-color: white;
-  color: ${({ textColor }) => textColor};
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: ${({ theme }) =>
+    theme
+      ? theme.palette.neutral.link
+      : defaultDesignTokens.palette.neutral.link};
   &:hover {
-    background-color: ${({ bgColor }) => bgColor};
-    border: 1px solid ${({ boderColor }) => boderColor};
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.12)},
-      0px 0px 16px 4px rgba(220, 219, 254, 0.24);
-    filter: drop-shadow(0px 0px 12px rgba(78, 75, 251, 0.16))
-      drop-shadow(0px 0px 8px rgba(78, 75, 251, 0.08));
+    background-color: ${({ theme }) =>
+      theme
+        ? theme.palette.neutral.lightText
+        : defaultDesignTokens.palette.neutral.lightText};
+    border: 1px solid
+      ${({ theme }) =>
+        theme
+          ? theme.palette.primary.primaryTint
+          : defaultDesignTokens.palette.primary.primaryTint};
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.primaryHoverFocusLight
+          : defaultDesignTokens.stateModifiers.primaryHoverFocusLight},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.primaryLightHoverFocus
+          : defaultDesignTokens.shadows.primaryLightHoverFocus};
   }
-
   &:active {
-    background-color: ${({ bgColor }) => bgColor};
-    border: 1px solid ${({ modifier }) => convertToRgba(modifier, 0.24)};
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.24)},
-      0px 0px 16px 4px rgba(220, 219, 254, 0.24);
+    background-color: ${({ theme }) =>
+      theme
+        ? theme.palette.neutral.lightText
+        : defaultDesignTokens.palette.neutral.lightText};
+    border: 1px solid
+      ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.primaryPressedLight
+          : defaultDesignTokens.stateModifiers.primaryPressedLight};
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.primaryPressedLight
+          : defaultDesignTokens.stateModifiers.primaryPressedLight},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.primaryLightPressed
+          : defaultDesignTokens.shadows.primaryLightPressed};
   }
 `;
-const DestructiveButton = styled.button<{ bgColor: string; modifier: string }>`
+const DestructiveButton = styled.button`
   ${StyledBaseButtonCSS}
-  color: white;
-  background-color: ${({ bgColor }) => bgColor};
-  box-shadow: 0px 2px 16px 4px rgba(239, 173, 190, 0.32),
-    0px 4px 12px rgba(215, 51, 92, 0.32), 0px 2px 4px rgba(215, 51, 92, 0.24);
+  color: ${({ theme }) =>
+    theme
+      ? theme.palette.neutral.lightText
+      : defaultDesignTokens.palette.neutral.lightText};
+  background-color: ${({ theme }) =>
+    theme
+      ? theme.palette.error.errorRef
+      : defaultDesignTokens.palette.error.errorRef};
+  box-shadow: ${({ theme }) =>
+    theme
+      ? theme.shadows.errorDarkDefault
+      : defaultDesignTokens.shadows.errorDarkDefault};
   &:hover {
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.32)},
-      0px 2px 16px 4px rgba(239, 173, 190, 0.32),
-      0px 8px 12px rgba(215, 51, 92, 0.32), 0px 4px 8px rgba(215, 51, 92, 0.24);
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.errorHoverFocusDark
+          : defaultDesignTokens.stateModifiers.errorHoverFocusDark},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.errorDarkHoverFocus
+          : defaultDesignTokens.shadows.errorDarkHoverFocus};
   }
-
   &:active {
-    box-shadow: inset 0px 0px 0px 100vmax
-        ${({ modifier }) => convertToRgba(modifier, 0.64)},
-      0px 2px 16px 4px rgba(239, 173, 190, 0.32),
-      0px 4px 12px rgba(215, 51, 92, 0.32), 0px 2px 4px rgba(215, 51, 92, 0.4);
+    box-shadow: ${({ theme }) =>
+        theme
+          ? theme.stateModifiers.errorPressedDark
+          : defaultDesignTokens.stateModifiers.errorPressedDark},
+      ${({ theme }) =>
+        theme
+          ? theme.shadows.errorDarkPressed
+          : defaultDesignTokens.shadows.errorDarkPressed};
   }
 `;
