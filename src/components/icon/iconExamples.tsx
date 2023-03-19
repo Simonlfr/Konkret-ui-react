@@ -35,6 +35,36 @@ import {
   IconFolderClosed,
   IconFile,
   IconDocument,
+  IconEdit,
+  IconDelete,
+  IconSynchronize,
+  IconAttach,
+  IconExternalLink,
+  IconCopy,
+  IconBookmark,
+  IconMail,
+  IconNoteficationOn,
+  IconNoteficationOff,
+  IconView,
+  IconHidden,
+  IconFilter,
+  IconShare,
+  IconSearch,
+  IconSend,
+  IconSave,
+  IconDownload,
+  IconLink,
+  IconLinkBreak,
+  IconLike,
+  IconDislike,
+  IconAccount,
+  IconTeam,
+  IconUsers,
+  IconUser,
+  IconPhone,
+  IconComment,
+  IconLocation,
+  IconDivider,
 } from "./icon";
 
 export function IconExamples(): JSX.Element {
@@ -74,6 +104,36 @@ export function IconExamples(): JSX.Element {
       <IconFolderClosed />
       <IconFile />
       <IconDocument />
+      <IconEdit />
+      <IconDelete />
+      <IconSynchronize />
+      <IconAttach />
+      <IconExternalLink />
+      <IconCopy />
+      <IconBookmark />
+      <IconMail />
+      <IconNoteficationOn />
+      <IconNoteficationOff />
+      <IconView />
+      <IconHidden />
+      <IconFilter />
+      <IconShare />
+      <IconSearch />
+      <IconSend />
+      <IconSave />
+      <IconDownload />
+      <IconLink />
+      <IconLinkBreak />
+      <IconLike />
+      <IconDislike />
+      <IconAccount />
+      <IconTeam />
+      <IconUsers />
+      <IconUser />
+      <IconPhone />
+      <IconComment />
+      <IconLocation />
+      <IconDivider />
     </Container>
   );
 }
