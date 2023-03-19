@@ -73,7 +73,7 @@ export function IconStarFilled({
   );
 }
 
-export function IconActionClose({
+export function IconClose({
   size = 14,
   color = useColorPalette().neutral.defaultText,
   viewBox = "-3 -3 24 24",
@@ -91,7 +91,7 @@ export function IconActionClose({
   );
 }
 
-export function IconActionDone({
+export function IconDone({
   size = 14,
   color = useColorPalette().neutral.defaultText,
   viewBox = "-3 -3 24 24",
@@ -109,7 +109,7 @@ export function IconActionDone({
   );
 }
 
-export function IconActionUnavailable({
+export function IconUnavailable({
   size = 14,
   color = useColorPalette().neutral.defaultText,
   viewBox = "-2 -2 24 24",
@@ -127,7 +127,7 @@ export function IconActionUnavailable({
   );
 }
 
-export function IconActionPlus({
+export function IconPlus({
   size = 14,
   color = useColorPalette().neutral.defaultText,
   viewBox = "-3 -3 24 24",
@@ -145,7 +145,7 @@ export function IconActionPlus({
   );
 }
 
-export function IconActionMinus({
+export function IconMinus({
   size = 14,
   color = useColorPalette().neutral.defaultText,
   viewBox = "-3 -11 24 24",
@@ -1165,6 +1165,380 @@ export function IconDivider({
   );
 }
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1" height="8" fill="none">
-  <path d="M0 0h1v8H0z" />
-</svg>;
+export function IconSettings({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-2 -2 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="m7.666 0-.49 2.523a7.951 7.951 0 0 0-2.244 1.291L2.508 2.98.172 7.02 2.113 8.71A8.006 8.006 0 0 0 2 10c0 .409.04.833.113 1.291v.002L.172 12.981l2.336 4.04 2.422-.834a7.953 7.953 0 0 0 2.246 1.29L7.666 20h4.668l.49-2.523a7.942 7.942 0 0 0 2.244-1.291l2.424.835 2.334-4.04-1.94-1.69c.075-.458.114-.883.114-1.291 0-.408-.039-.832-.113-1.29V8.71l1.941-1.69-2.336-4.04-2.422.833a7.951 7.951 0 0 0-2.246-1.289L12.334 0H7.666Zm1.648 2h1.371l.39 2 1.042.395a5.94 5.94 0 0 1 1.684.964l.863.707 1.922-.66.686 1.186-1.536 1.336.176 1.1v.001c.061.375.088.69.088.971s-.027.596-.088.97l-.178 1.1 1.536 1.336-.686 1.188-1.92-.662-.865.709a5.932 5.932 0 0 1-1.682.964h-.002L11.072 16l-.388 2h-1.37l-.388-2-1.043-.395a5.943 5.943 0 0 1-1.684-.964l-.863-.707-1.922.66-.685-1.186 1.537-1.338-.178-1.095v-.002A6.16 6.16 0 0 1 4 10c0-.281.027-.596.088-.97l.178-1.1-1.537-1.336.685-1.188 1.922.662.863-.709a5.941 5.941 0 0 1 1.684-.964L8.926 4l.388-2ZM10 6c-2.197 0-4 1.803-4 4s1.803 4 4 4 4-1.803 4-4-1.803-4-4-4Zm0 2c1.111 0 2 .889 2 2s-.889 2-2 2-2-.889-2-2 .889-2 2-2Z" />
+    </svg>
+  );
+}
+
+export function IconMap({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="m8.969 2.936-5.34 2.136A.999.999 0 0 0 3 6v14a1 1 0 0 0 1.371.928l4.66-1.864 6 2 5.34-2.136A.999.999 0 0 0 21 18V4a1 1 0 0 0-1.371-.928l-4.66 1.864-6-2ZM10 5.386l4 1.335v11.892l-4-1.334V5.387Zm-2 .09v11.846l-3 1.201V6.678l3-1.201Zm11 0v11.846l-3 1.201V6.678l3-1.201Z" />
+    </svg>
+  );
+}
+
+export function IconHome({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M12 2.1 1 12h3v9h7v-6h2v6h7v-9h3L12 2.1Zm0 2.691 6 5.4V19h-3v-6H9v6H6v-8.809l6-5.4Z" />
+    </svg>
+  );
+}
+
+export function IconHomeSelected({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M12 2.1 1 12h3v9h6v-6h4v6h6v-9h3L12 2.1Z" />
+    </svg>
+  );
+}
+
+export function IconPreference({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M10 2c-1.293 0-2.395.843-2.813 2H2v2h5.188C7.604 7.157 8.707 8 10 8c1.645 0 3-1.355 3-3s-1.355-3-3-3Zm0 2c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1Zm5 0v2h7V4h-7Zm0 5c-1.293 0-2.395.843-2.813 2H2v2h10.188c.417 1.157 1.519 2 2.812 2 1.645 0 3-1.355 3-3s-1.355-3-3-3Zm0 2c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1Zm5 0v2h2v-2h-2ZM7 16c-1.293 0-2.395.843-2.813 2H2v2h2.188c.417 1.157 1.519 2 2.812 2 1.645 0 3-1.355 3-3s-1.355-3-3-3Zm0 2c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1Zm5 0v2h10v-2H12Z" />
+    </svg>
+  );
+}
+
+export function IconCalendar({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M6 1v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2v2H8V1H6ZM5 5h14v2H5V5Zm0 4h14v10H5V9Z" />
+    </svg>
+  );
+}
+
+export function IconInbox({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M5.75 3a1 1 0 0 0-.982.809l-1.75 9A1 1 0 0 0 3 13v6c0 1.093.907 2 2 2h14c1.093 0 2-.907 2-2v-6a1 1 0 0 0-.018-.191l-1.75-9A1 1 0 0 0 18.25 3H5.75Zm.824 2h10.852l1.555 8H15a1 1 0 0 0-.895.553L13.383 15h-2.766l-.722-1.447A1 1 0 0 0 9 13H5.02l1.554-8ZM5 15h3.383l.722 1.447A1 1 0 0 0 10 17h4a1 1 0 0 0 .895-.553L15.617 15H19v4H5v-4Z" />
+    </svg>
+  );
+}
+
+export function IconContext({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2Zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Z" />
+    </svg>
+  );
+}
+
+export function IconSkipToStart({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-3 -6 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M0 0v12h2V6.354L10 12V6.354L18 12V0l-8 5.646V0L2 5.646V0H0Zm8 3.86v4.28L4.969 6 8 3.86Zm8 0v4.28L12.969 6 16 3.86Z" />
+    </svg>
+  );
+}
+
+export function IconRewind({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-2 -6 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M9 0 .5 6 9 12V0Zm9 0L9.5 6l8.5 6V0ZM7 3.86v4.28L3.969 6 7 3.86Zm9 0v4.28L12.969 6 16 3.86Z" />
+    </svg>
+  );
+}
+
+export function IconPlay({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-7 -6 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M0 0v14l11-7L0 0Zm2 3.643L7.275 7 2 10.357V3.643Z" />
+    </svg>
+  );
+}
+
+export function IconPause({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-7 -5 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M0 0v14h2V0H0Zm8 0v14h2V0H8Z" />
+    </svg>
+  );
+}
+
+export function IconFastForward({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-4 -6 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M0 0v12l8.5-6L0 0Zm9 0v12l8.5-6L9 0ZM2 3.86 5.031 6 2 8.14V3.86Zm9 0L14.031 6 11 8.14V3.86Z" />
+    </svg>
+  );
+}
+
+export function IconEnd({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-3 -6 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M0 0v12l8-5.646V12l8-5.646V12h2V0h-2v5.646L8 0v5.646L0 0Zm2 3.86L5.031 6 2 8.14V3.86Zm8 0L13.031 6 10 8.14V3.86Z" />
+    </svg>
+  );
+}
+
+export function IconStop({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-5 -5 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M0 0v14h14V0H0Zm12 12H2V2h10v10Z" />
+    </svg>
+  );
+}
+
+export function IconFullStop({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-6 -6 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M6 0C2.698 0 0 2.698 0 6s2.698 6 6 6 6-2.698 6-6-2.698-6-6-6Zm0 2c2.221 0 4 1.779 4 4s-1.779 4-4 4-4-1.779-4-4 1.779-4 4-4Z" />
+    </svg>
+  );
+}
+
+export function IconMute({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-3 -3 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M10 0 4 6H2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2l6 6V0ZM8 4.828v8.344l-2.586-2.586L4.828 10H2V8h2.828l.586-.586L8 4.828Zm5.707.465-1.414 1.414L14.586 9l-2.293 2.293 1.414 1.414L16 10.414l2.293 2.293 1.414-1.414L17.414 9l2.293-2.293-1.414-1.414L16 7.586l-2.293-2.293Z" />
+    </svg>
+  );
+}
+
+export function IconVolume({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "-2 -3 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M10 0 4 6H2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2l6 6V0Zm8.484.516L17.07 1.93a9.983 9.983 0 0 1 0 14.14l1.414 1.414c4.679-4.677 4.678-12.29 0-16.968Zm-2.828 2.828-1.414 1.414a5.983 5.983 0 0 1 0 8.484l1.414 1.414c3.117-3.115 3.116-8.196 0-11.312ZM8 4.828v8.344l-2.586-2.586L4.828 10H2V8h2.828l.586-.586L8 4.828Zm4.828 1.344-1.414 1.414c.79.79.79 2.038 0 2.828l1.414 1.416a4.017 4.017 0 0 0 0-5.658Z" />
+    </svg>
+  );
+}
+
+export function IconNewTag({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "1 1 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="m12.172 3-9.584 9.586A1.98 1.98 0 0 0 2 14c0 .535.208 1.038.586 1.414l6.002 6c.378.377.879.586 1.412.586.535 0 1.038-.208 1.414-.586L21 11.828V3h-8.828ZM13 5h6v6l-9 9-6-6 9-9Zm3 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3 9v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z" />
+    </svg>
+  );
+}
+
+export function IconTag({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="m12.172 3-9.586 9.586C2.208 12.964 2 13.466 2 14c0 .534.208 1.036.586 1.414l6 6c.378.378.88.586 1.414.586.534 0 1.036-.208 1.414-.586L21 11.828V3h-8.828ZM13 5h6v6l-9 9-6-6 9-9Zm3 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" />
+    </svg>
+  );
+}
+
+export function IconTags({
+  size = 14,
+  color = useColorPalette().neutral.defaultText,
+  viewBox = "0 0 24 24",
+}): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={viewBox}
+      fill={color}
+    >
+      <path d="M14.783 4 6.62 12.164c-.4.4-.619.93-.619 1.494 0 .565.22 1.097.62 1.496l4.226 4.227c.399.399.932.619 1.496.619.565 0 1.096-.22 1.494-.62L22 11.218V4h-7.217Zm-5.42.293L1.586 12.07c-.378.378-.586.88-.586 1.414 0 .535.208 1.036.586 1.414l5.363 5.366 1.414-1.414L3 13.484l7.777-7.779-1.414-1.412ZM15.611 6H20v4.389l-7.578 7.578h-.162L8.033 13.74v-.162L15.611 6ZM17 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" />
+    </svg>
+  );
+}
