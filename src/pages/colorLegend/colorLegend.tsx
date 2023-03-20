@@ -3,7 +3,10 @@ import {
   ColorShade,
   generateColorPalette,
 } from "../../utils/generateColorPalette";
-import { HeadlineMedium, SubtitleLargeCss } from "../typography/typography";
+import {
+  HeadlineMedium,
+  SubtitleLargeCss,
+} from "../../components/typography/typography";
 
 function getText(shade: number): string {
   if (shade === 0) return "Ref";

@@ -27,8 +27,9 @@
     // go to js file when using IDE functions like
     // "Go to Definition" in VSCode
     "declarationMap": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
-  "include": ["src", "types"],
+  "include": ["src/components", "src/utils", "src/providers", "types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
