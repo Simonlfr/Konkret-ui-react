@@ -1,10 +1,13 @@
 {
   "name": "konkret-ui-react",
-  "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "main": "src/main.tsx",
+  "files": [
+    "src/**/*"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "preview": "vite preview",
     "test:playwright": "playwright test -c playwright-ct.config.ts",
     "test:playwright:update": "playwright test -c playwright-ct.config.ts --update-snapshots",

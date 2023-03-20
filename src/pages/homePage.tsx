@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../components/button/button";
-import { ColorLegend } from "../components/colorLegend/colorLegend";
+import { ColorLegend } from "./colorLegend/colorLegend";
 import { IconHeartOutlined } from "../components/icon/icon";
 import { IconExamples } from "../components/icon/iconExamples";
 import { HeadlineMedium } from "../components/typography/typography";
