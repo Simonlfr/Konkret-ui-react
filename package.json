@@ -1,8 +1,11 @@
 {
   "name": "konkret-ui-react",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "module": "index.ts",
+  "files": [
+    "src/**/*"
+  ],
   "types": "index.ts",
   "scripts": {
     "dev": "vite",
