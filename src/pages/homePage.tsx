@@ -5,7 +5,7 @@ import { ColorLegend } from "./colorLegend/colorLegend";
 import { IconHeartOutlined } from "../components/icon/icon";
 import { IconExamples } from "../components/icon/iconExamples";
 import { HeadlineMedium } from "../components/typography/typography";
-import { useColorPalette } from "../providers/colorProvider";
+import { useColorPalette } from "../providers/colorPaletteProvider";
 
 export function HomePage(): JSX.Element {
   const colorPalette = useColorPalette();

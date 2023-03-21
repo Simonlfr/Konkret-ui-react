@@ -1,12 +1,18 @@
+import React from "react";
 import "./App.css";
 import { HomePage } from "./pages/homePage";
-import { useColorPalette } from "./providers/colorProvider";
 import { DesignTokenProvider } from "./providers/designTokenProvider";
 
 function App() {
-  const colorPalette = useColorPalette();
   return (
-    <DesignTokenProvider colorPalette={colorPalette}>
+    <DesignTokenProvider
+      refColors={{
+        primary: "#4e4bfb",
+        secondary: "#3E737B",
+        error: "#D7335C",
+        neutral: "#5D7398",
+      }}
+    >
       <HomePage />
     </DesignTokenProvider>
   );
