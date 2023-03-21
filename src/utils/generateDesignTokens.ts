@@ -1,5 +1,5 @@
-import { ColorPaletteType } from "../providers/colorProvider";
 import { convertToRgba } from "./convertToRGBA";
+import { ColorPaletteType } from "./generateColorPalette";
 
 type StateModifiersType = {
   primaryHoverFocusLight: string;

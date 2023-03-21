@@ -1,5 +1,5 @@
 import React from "react";
-import { useColorPalette } from "../../providers/colorProvider";
+import { useColorPalette } from "../../providers/colorPaletteProvider";
 
 export function IconHeartOutlined({
   size = 14,
@@ -988,9 +988,9 @@ export function IconLike({
     >
       <path
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1.667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.667"
         d="m6 10 4-9a3 3 0 0 1 3 3v4h5.66a2 2 0 0 1 2 2.3l-1.38 9a2 2 0 0 1-2 1.7H6m0-11v11m0-11H3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"
       />
     </svg>
@@ -1012,9 +1012,9 @@ export function IconDislike({
     >
       <path
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1.667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.667"
         d="m16 12-4 9a3 3 0 0 1-3-3v-4H3.34a2 2 0 0 1-2-2.3l1.38-9a2 2 0 0 1 2-1.7H16m0 11V1m0 11h2.67A2.31 2.31 0 0 0 21 10V3a2.31 2.31 0 0 0-2.33-2H16"
       />
     </svg>

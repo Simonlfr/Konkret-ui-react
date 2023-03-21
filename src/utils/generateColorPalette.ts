@@ -1,44 +1,102 @@
-export interface ColorShade {
-  shade: number;
-  color: string;
+import { ColorShade, generateColorShaders } from "./generateColorShaders";
+
+interface PrimaryPalette {
+  primaryRef: string;
+  onPrimary: string;
+  primaryTint: string;
+  primaryLightTint: string;
+  onPrimaryTint: string;
 }
-export function generateColorPalette(
-  baseColor: string,
-  shadeInterval: number[]
-): ColorShade[] {
-  const parsedColor = baseColor.replace("#", "");
-  if (!/^[0-9A-F]{6}$/i.test(parsedColor)) {
-    throw new Error(`Invalid color: ${baseColor}`);
+
+interface SecondaryPalette {
+  secondaryRef: string;
+  onSecondary: string;
+  secondaryTint: string;
+  secondaryLightTint: string;
+  onSecondaryTint: string;
+}
+
+interface ErrorPalette {
+  errorRef: string;
+  onError: string;
+  errorTint: string;
+  errorLightTint: string;
+  onErrorTint: string;
+}
+
+interface NeutralPalette {
+  background: string;
+  defaultText: string;
+  subtleText: string;
+  lightText: string;
+  link: string;
+  Disabled: string;
+  onDisabled: string;
+}
+
+export interface ColorPaletteType {
+  primary: PrimaryPalette;
+  secondary: SecondaryPalette;
+  error: ErrorPalette;
+  neutral: NeutralPalette;
+}
+
+function convertArrayToObject(colors: ColorShade[]): { [key: string]: string } {
+  const colorObject: { [key: string]: string } = {};
+  for (const color of colors) {
+    colorObject[color.shade] = color.color;
   }
+  return colorObject;
+}
 
-  const baseRed = parseInt(parsedColor.substring(0, 2), 16);
-  const baseGreen = parseInt(parsedColor.substring(2, 4), 16);
-  const baseBlue = parseInt(parsedColor.substring(4, 6), 16);
+export function generateColorPalette(
+  primary: string,
+  secondary: string,
+  error: string,
+  neutral: string,
+  range: number[]
+): ColorPaletteType {
+  const colorPrimary = convertArrayToObject(
+    generateColorShaders(primary, range)
+  );
+  const colorSecondary = convertArrayToObject(
+    generateColorShaders(secondary, range)
+  );
+  const colorError = convertArrayToObject(generateColorShaders(error, range));
+  const colorNeutral = convertArrayToObject(
+    generateColorShaders(neutral, range)
+  );
 
-  const colors: ColorShade[] = shadeInterval.map((shade) => {
-    const red = Math.max(
-      0,
-      baseRed +
-        Math.floor((shade / 100) * (shade < 0 ? baseRed : 255 - baseRed))
-    );
-    const green = Math.max(
-      0,
-      baseGreen +
-        Math.floor((shade / 100) * (shade < 0 ? baseGreen : 255 - baseGreen))
-    );
-    const blue = Math.max(
-      0,
-      baseBlue +
-        Math.floor((shade / 100) * (shade < 0 ? baseBlue : 255 - baseBlue))
-    );
-
-    const rgb = `rgb(${red}, ${green}, ${blue})`;
-    const hex = `#${((red << 16) | (green << 8) | blue)
-      .toString(16)
-      .padStart(6, "0")}`;
-
-    return { shade: shade, color: shade < 0 ? hex : rgb };
-  });
-
-  return colors;
+  return {
+    primary: {
+      primaryRef: colorPrimary["0"],
+      onPrimary: colorPrimary["100"],
+      primaryTint: colorPrimary["80"],
+      primaryLightTint: colorPrimary["90"],
+      onPrimaryTint: colorPrimary["-40"],
+    },
+    secondary: {
+      secondaryRef: colorSecondary["0"],
+      onSecondary: colorSecondary["100"],
+      secondaryTint: colorSecondary["80"],
+      secondaryLightTint: colorSecondary["90"],
+      onSecondaryTint: colorSecondary["-40"],
+    },
+    error: {
+      errorRef: colorError["0"],
+      onError: colorError["100"],
+      errorTint: colorError["80"],
+      errorLightTint: colorError["90"],
+      onErrorTint: colorError["-40"],
+    },
+    neutral: {
+      background: colorNeutral["100"],
+      defaultText: colorNeutral["-80"],
+      subtleText: colorNeutral["0"],
+      lightText: colorNeutral["100"],
+      link: colorPrimary["0"],
+      Disabled: colorNeutral["90"],
+      onDisabled: colorNeutral["40"],
+    },
+  };
 }

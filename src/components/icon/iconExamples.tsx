@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useColorPalette } from "../../providers/colorProvider";
+import { useColorPalette } from "../../providers/colorPaletteProvider";
 import {
   IconClose,
   IconDone,

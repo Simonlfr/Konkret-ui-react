@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {
   ColorShade,
-  generateColorPalette,
-} from "../../utils/generateColorPalette";
+  generateColorShaders,
+} from "../../utils/generateColorShaders";
 import {
   HeadlineMedium,
   SubtitleLargeCss,
@@ -34,10 +34,10 @@ function Palette(props: { colorPalette: ColorShade[] }): JSX.Element {
 
 export function ColorLegend(): JSX.Element {
   const colorRange = [-80, -60, -40, -20, 0, 20, 40, 60, 80, 90, 95, 100];
-  const colorPrimary = generateColorPalette("#4e4bfb", colorRange);
-  const colorSecondary = generateColorPalette("#3E737B", colorRange);
-  const colorError = generateColorPalette("#D13E4A", colorRange);
-  const colorNeutral = generateColorPalette("#5D7398", colorRange);
+  const colorPrimary = generateColorShaders("#4e4bfb", colorRange);
+  const colorSecondary = generateColorShaders("#3E737B", colorRange);
+  const colorError = generateColorShaders("#D13E4A", colorRange);
+  const colorNeutral = generateColorShaders("#5D7398", colorRange);
 
   return (
     <Container>
