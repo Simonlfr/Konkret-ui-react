@@ -1,5 +1,5 @@
 import React from "react";
-import { useColorPalette } from "../../providers/colorProvider";
+import { useColorPalette } from "../../providers/colorPaletteProvider";
 
 export function IconHeartOutlined({
   size = 14,
