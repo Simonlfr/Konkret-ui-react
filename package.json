@@ -15,14 +15,16 @@
     "test:playwright:update": "playwright test -c playwright-ct.config.ts --update-snapshots",
     "test-ct": "playwright test -c playwright-ct.config.ts"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
     "@fontsource/noto-sans": "^4.5.11",
-    "@playwright/experimental-ct-react": "^1.31.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "styled-components": "^5.3.8"
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.31.2",
     "@playwright/test": "^1.31.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",

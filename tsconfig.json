@@ -8,28 +8,15 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    // Tells TypeScript to read JS files, as
-    // normally they are ignored as source files
     "allowJs": true,
-    // Generate d.ts files
     "declaration": true,
-    // This compiler run should
-    // only output d.ts files
-    "emitDeclarationOnly": true,
-    // Types should go into this directory.
-    // Removing this would place the .d.ts files
-    // next to the .js files
     "outDir": "dist",
-    // go to js file when using IDE functions like
-    // "Go to Definition" in VSCode
     "declarationMap": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "typeRoots": ["./node_modules/@types", "./types"]
   },
-  "include": ["src/components", "src/utils", "src/providers", "types"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/components", "src/utils", "src/providers", "types"]
 }
