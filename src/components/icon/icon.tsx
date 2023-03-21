@@ -1,9 +1,9 @@
 import React from "react";
-import { useColorPalette } from "../../providers/colorPaletteProvider";
+import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
 
 export function IconHeartOutlined({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -3 24 24",
 }): JSX.Element {
   return (
@@ -21,7 +21,7 @@ export function IconHeartOutlined({
 
 export function IconHeartFilled({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -3 24 24",
 }): JSX.Element {
   return (
@@ -39,7 +39,7 @@ export function IconHeartFilled({
 
 export function IconStarOutlined({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -57,7 +57,7 @@ export function IconStarOutlined({
 
 export function IconStarFilled({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -75,7 +75,7 @@ export function IconStarFilled({
 
 export function IconClose({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -93,7 +93,7 @@ export function IconClose({
 
 export function IconDone({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -111,7 +111,7 @@ export function IconDone({
 
 export function IconUnavailable({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -129,7 +129,7 @@ export function IconUnavailable({
 
 export function IconPlus({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -147,7 +147,7 @@ export function IconPlus({
 
 export function IconMinus({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -11 24 24",
 }): JSX.Element {
   return (
@@ -165,7 +165,7 @@ export function IconMinus({
 
 export function IconChevronBack({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-7 -5 24 24",
 }): JSX.Element {
   return (
@@ -183,7 +183,7 @@ export function IconChevronBack({
 
 export function IconChevronUp({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 -1 24 24",
 }): JSX.Element {
   return (
@@ -201,7 +201,7 @@ export function IconChevronUp({
 
 export function IconChevronDown({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 1 24 24",
 }): JSX.Element {
   return (
@@ -219,7 +219,7 @@ export function IconChevronDown({
 
 export function IconChevronForward({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-1 0 24 24",
 }): JSX.Element {
   return (
@@ -237,7 +237,7 @@ export function IconChevronForward({
 
 export function IconArrowBack({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -4 24 24",
 }): JSX.Element {
   return (
@@ -255,7 +255,7 @@ export function IconArrowBack({
 
 export function IconArrowUp({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -273,7 +273,7 @@ export function IconArrowUp({
 
 export function IconArrowDown({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -291,7 +291,7 @@ export function IconArrowDown({
 
 export function IconArrowForward({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -309,7 +309,7 @@ export function IconArrowForward({
 
 export function IconFullscreen({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -327,7 +327,7 @@ export function IconFullscreen({
 
 export function IconCaretBack({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-9 -7 24 24",
 }): JSX.Element {
   return (
@@ -345,7 +345,7 @@ export function IconCaretBack({
 
 export function IconCaretDown({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -363,7 +363,7 @@ export function IconCaretDown({
 
 export function IconCaretUp({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -381,7 +381,7 @@ export function IconCaretUp({
 
 export function IconCaretForward({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -399,7 +399,7 @@ export function IconCaretForward({
 
 export function IconCaretSelector({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -417,7 +417,7 @@ export function IconCaretSelector({
 
 export function IconSortAlphaAsc({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -435,7 +435,7 @@ export function IconSortAlphaAsc({
 
 export function IconSortAlphaDesc({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -453,7 +453,7 @@ export function IconSortAlphaDesc({
 
 export function IconSortNumericAsc({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -471,7 +471,7 @@ export function IconSortNumericAsc({
 
 export function IconSortNumericDesc({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-4 -2 24 24",
 }): JSX.Element {
   return (
@@ -489,7 +489,7 @@ export function IconSortNumericDesc({
 
 export function IconSortSizeAsc({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -507,7 +507,7 @@ export function IconSortSizeAsc({
 
 export function IconSortSizeDesc({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -525,7 +525,7 @@ export function IconSortSizeDesc({
 
 export function IconChart({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -543,7 +543,7 @@ export function IconChart({
 
 export function IconFolderOpen({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -4 24 24",
 }): JSX.Element {
   return (
@@ -561,7 +561,7 @@ export function IconFolderOpen({
 
 export function IconFolderClosed({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -4 24 24",
 }): JSX.Element {
   return (
@@ -579,7 +579,7 @@ export function IconFolderClosed({
 
 export function IconFile({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-4 -2 24 24",
 }): JSX.Element {
   return (
@@ -597,7 +597,7 @@ export function IconFile({
 
 export function IconDocument({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-4 -2 24 24",
 }): JSX.Element {
   return (
@@ -615,7 +615,7 @@ export function IconDocument({
 
 export function IconEdit({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -2 24 24",
 }): JSX.Element {
   return (
@@ -633,7 +633,7 @@ export function IconEdit({
 
 export function IconDelete({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-4 -2 24 24",
 }): JSX.Element {
   return (
@@ -651,7 +651,7 @@ export function IconDelete({
 
 export function IconSynchronize({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 0 24 24",
 }): JSX.Element {
   return (
@@ -669,7 +669,7 @@ export function IconSynchronize({
 
 export function IconAttach({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-6 -1 24 24",
 }): JSX.Element {
   return (
@@ -687,7 +687,7 @@ export function IconAttach({
 
 export function IconExternalLink({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -705,7 +705,7 @@ export function IconExternalLink({
 
 export function IconCopy({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -723,7 +723,7 @@ export function IconCopy({
 
 export function IconBookmark({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-4 -2 24 24",
 }): JSX.Element {
   return (
@@ -741,7 +741,7 @@ export function IconBookmark({
 
 export function IconMail({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -4 24 24",
 }): JSX.Element {
   return (
@@ -759,7 +759,7 @@ export function IconMail({
 
 export function IconNoteficationOn({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-4 -2 24 24",
 }): JSX.Element {
   return (
@@ -777,7 +777,7 @@ export function IconNoteficationOn({
 
 export function IconNoteficationOff({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -795,7 +795,7 @@ export function IconNoteficationOff({
 
 export function IconView({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-1 -4 24 24",
 }): JSX.Element {
   return (
@@ -813,7 +813,7 @@ export function IconView({
 
 export function IconHidden({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-1 -2 24 24",
 }): JSX.Element {
   return (
@@ -831,7 +831,7 @@ export function IconHidden({
 
 export function IconFilter({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -849,7 +849,7 @@ export function IconFilter({
 
 export function IconShare({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -2 24 24",
 }): JSX.Element {
   return (
@@ -867,7 +867,7 @@ export function IconShare({
 
 export function IconSearch({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -885,7 +885,7 @@ export function IconSearch({
 
 export function IconSend({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -903,7 +903,7 @@ export function IconSend({
 
 export function IconSave({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -921,7 +921,7 @@ export function IconSave({
 
 export function IconDownload({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -939,7 +939,7 @@ export function IconDownload({
 
 export function IconLink({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-1 -6 24 24",
 }): JSX.Element {
   return (
@@ -957,7 +957,7 @@ export function IconLink({
 
 export function IconLinkBreak({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 -2 24 24",
 }): JSX.Element {
   return (
@@ -975,7 +975,7 @@ export function IconLinkBreak({
 
 export function IconLike({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-1 -1 24 24",
 }): JSX.Element {
   return (
@@ -999,7 +999,7 @@ export function IconLike({
 
 export function IconDislike({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-1 -1 24 24",
 }): JSX.Element {
   return (
@@ -1023,7 +1023,7 @@ export function IconDislike({
 
 export function IconAccount({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1041,7 +1041,7 @@ export function IconAccount({
 
 export function IconTeam({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1059,7 +1059,7 @@ export function IconTeam({
 
 export function IconUsers({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1077,7 +1077,7 @@ export function IconUsers({
 
 export function IconUser({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -1095,7 +1095,7 @@ export function IconUser({
 
 export function IconPhone({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -1113,7 +1113,7 @@ export function IconPhone({
 
 export function IconComment({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -3 24 24",
 }): JSX.Element {
   return (
@@ -1131,7 +1131,7 @@ export function IconComment({
 
 export function IconLocation({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-5 -2 24 24",
 }): JSX.Element {
   return (
@@ -1149,7 +1149,7 @@ export function IconLocation({
 
 export function IconDivider({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-12 -8 24 24",
 }): JSX.Element {
   return (
@@ -1167,7 +1167,7 @@ export function IconDivider({
 
 export function IconSettings({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -2 24 24",
 }): JSX.Element {
   return (
@@ -1185,7 +1185,7 @@ export function IconSettings({
 
 export function IconMap({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1203,7 +1203,7 @@ export function IconMap({
 
 export function IconHome({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1221,7 +1221,7 @@ export function IconHome({
 
 export function IconHomeSelected({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1239,7 +1239,7 @@ export function IconHomeSelected({
 
 export function IconPreference({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1257,7 +1257,7 @@ export function IconPreference({
 
 export function IconCalendar({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1275,7 +1275,7 @@ export function IconCalendar({
 
 export function IconInbox({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1293,7 +1293,7 @@ export function IconInbox({
 
 export function IconContext({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1311,7 +1311,7 @@ export function IconContext({
 
 export function IconSkipToStart({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -6 24 24",
 }): JSX.Element {
   return (
@@ -1329,7 +1329,7 @@ export function IconSkipToStart({
 
 export function IconRewind({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -6 24 24",
 }): JSX.Element {
   return (
@@ -1347,7 +1347,7 @@ export function IconRewind({
 
 export function IconPlay({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-7 -6 24 24",
 }): JSX.Element {
   return (
@@ -1365,7 +1365,7 @@ export function IconPlay({
 
 export function IconPause({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-7 -5 24 24",
 }): JSX.Element {
   return (
@@ -1383,7 +1383,7 @@ export function IconPause({
 
 export function IconFastForward({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-4 -6 24 24",
 }): JSX.Element {
   return (
@@ -1401,7 +1401,7 @@ export function IconFastForward({
 
 export function IconEnd({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -6 24 24",
 }): JSX.Element {
   return (
@@ -1419,7 +1419,7 @@ export function IconEnd({
 
 export function IconStop({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-5 -5 24 24",
 }): JSX.Element {
   return (
@@ -1437,7 +1437,7 @@ export function IconStop({
 
 export function IconFullStop({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-6 -6 24 24",
 }): JSX.Element {
   return (
@@ -1455,7 +1455,7 @@ export function IconFullStop({
 
 export function IconMute({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-3 -3 24 24",
 }): JSX.Element {
   return (
@@ -1473,7 +1473,7 @@ export function IconMute({
 
 export function IconVolume({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "-2 -3 24 24",
 }): JSX.Element {
   return (
@@ -1491,7 +1491,7 @@ export function IconVolume({
 
 export function IconNewTag({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "1 1 24 24",
 }): JSX.Element {
   return (
@@ -1509,7 +1509,7 @@ export function IconNewTag({
 
 export function IconTag({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (
@@ -1527,7 +1527,7 @@ export function IconTag({
 
 export function IconTags({
   size = 14,
-  color = useColorPalette().neutral.defaultText,
+  color = defaultDesignTokens.palette.neutral.defaultText,
   viewBox = "0 0 24 24",
 }): JSX.Element {
   return (

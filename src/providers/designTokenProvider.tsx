@@ -5,6 +5,9 @@ import {
   generateDesignTokens,
 } from "../utils/generateDesignTokens";
 import { ColorProvider, useColorPalette } from "./colorPaletteProvider";
+import baseStyled, { ThemedStyledInterface } from "styled-components";
+
+export const styled = baseStyled as ThemedStyledInterface<DesignTokenType>;
 
 export type RefColors = {
   primary: string;
