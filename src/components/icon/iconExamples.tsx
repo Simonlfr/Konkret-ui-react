@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useColorPalette } from "../../providers/colorPaletteProvider";
+import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
 import {
   IconClose,
   IconDone,
@@ -90,124 +91,103 @@ import {
 } from "./icon";
 
 export function IconExamples(): JSX.Element {
-  const colorPalette = useColorPalette();
   return (
     <Container>
-      <IconHeartOutlined
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconHeartFilled size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconStarOutlined size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconStarFilled size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconClose size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconDone size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconUnavailable size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconPlus size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconMinus size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconChevronBack size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconChevronUp size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconChevronDown size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconChevronForward
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconArrowBack size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconArrowUp size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconArrowDown size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconArrowForward size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconFullscreen size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconCaretBack size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconCaretDown size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconCaretUp size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconCaretForward size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconCaretSelector
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconSortAlphaAsc size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSortAlphaDesc
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconSortNumericAsc
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconSortNumericDesc
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconSortSizeAsc size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSortSizeDesc size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconChart size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconFolderOpen size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconFolderClosed size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconFile size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconDocument size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconEdit size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconDelete size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSynchronize size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconAttach size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconExternalLink size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconCopy size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconBookmark size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconMail size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconNoteficationOn
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconNoteficationOff
-        size={18}
-        color={colorPalette.secondary.secondaryRef}
-      />
-      <IconView size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconHidden size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconFilter size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconShare size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSearch size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSend size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSave size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconDownload size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconLink size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconLinkBreak size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconLike size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconDislike size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconAccount size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconTeam size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconUsers size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconUser size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconPhone size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconComment size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconLocation size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconDivider size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSettings size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconMap size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconHome size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconHomeSelected size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconPreference size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconCalendar size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconInbox size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconContext size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconSkipToStart size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconRewind size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconPlay size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconPause size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconFastForward size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconEnd size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconStop size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconFullStop size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconMute size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconVolume size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconNewTag size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconTag size={18} color={colorPalette.secondary.secondaryRef} />
-      <IconTags size={18} color={colorPalette.secondary.secondaryRef} />
+      <IconHeartOutlined size={18} />
+      <IconHeartFilled size={18} />
+      <IconStarOutlined size={18} />
+      <IconStarFilled size={18} />
+      <IconClose size={18} />
+      <IconDone size={18} />
+      <IconUnavailable size={18} />
+      <IconPlus size={18} />
+      <IconMinus size={18} />
+      <IconChevronBack size={18} />
+      <IconChevronUp size={18} />
+      <IconChevronDown size={18} />
+      <IconChevronForward size={18} />
+      <IconArrowBack size={18} />
+      <IconArrowUp size={18} />
+      <IconArrowDown size={18} />
+      <IconArrowForward size={18} />
+      <IconFullscreen size={18} />
+      <IconCaretBack size={18} />
+      <IconCaretDown size={18} />
+      <IconCaretUp size={18} />
+      <IconCaretForward size={18} />
+      <IconCaretSelector size={18} />
+      <IconSortAlphaAsc size={18} />
+      <IconSortAlphaDesc size={18} />
+      <IconSortNumericAsc size={18} />
+      <IconSortNumericDesc size={18} />
+      <IconSortSizeAsc size={18} />
+      <IconSortSizeDesc size={18} />
+      <IconChart size={18} />
+      <IconFolderOpen size={18} />
+      <IconFolderClosed size={18} />
+      <IconFile size={18} />
+      <IconDocument size={18} />
+      <IconEdit size={18} />
+      <IconDelete size={18} />
+      <IconSynchronize size={18} />
+      <IconAttach size={18} />
+      <IconExternalLink size={18} />
+      <IconCopy size={18} />
+      <IconBookmark size={18} />
+      <IconMail size={18} />
+      <IconNoteficationOn size={18} />
+      <IconNoteficationOff size={18} />
+      <IconView size={18} />
+      <IconHidden size={18} />
+      <IconFilter size={18} />
+      <IconShare size={18} />
+      <IconSearch size={18} />
+      <IconSend size={18} />
+      <IconSave size={18} />
+      <IconDownload size={18} />
+      <IconLink size={18} />
+      <IconLinkBreak size={18} />
+      <IconLike size={18} />
+      <IconDislike size={18} />
+      <IconAccount size={18} />
+      <IconTeam size={18} />
+      <IconUsers size={18} />
+      <IconUser size={18} />
+      <IconPhone size={18} />
+      <IconComment size={18} />
+      <IconLocation size={18} />
+      <IconDivider size={18} />
+      <IconSettings size={18} />
+      <IconMap size={18} />
+      <IconHome size={18} />
+      <IconHomeSelected size={18} />
+      <IconPreference size={18} />
+      <IconCalendar size={18} />
+      <IconInbox size={18} />
+      <IconContext size={18} />
+      <IconSkipToStart size={18} />
+      <IconRewind size={18} />
+      <IconPlay size={18} />
+      <IconPause size={18} />
+      <IconFastForward size={18} />
+      <IconEnd size={18} />
+      <IconStop size={18} />
+      <IconFullStop size={18} />
+      <IconMute size={18} />
+      <IconVolume size={18} />
+      <IconNewTag size={18} />
+      <IconTag size={18} />
+      <IconTags size={18} />
     </Container>
   );
 }
 
 const Container = styled.div`
-  border: 1px solid ${({ theme }) => theme.palette.secondary.secondaryRef};
+  border: 1px solid
+    ${({ theme }) =>
+      theme && theme.palette
+        ? theme.palette.secondary.secondaryRef
+        : defaultDesignTokens.palette.secondary.secondaryRef};
   border-radius: 12px;
   padding: 8px;
   width: 33%;
