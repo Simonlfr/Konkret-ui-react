@@ -1,4 +1,3 @@
-import React from "react";
 import { test } from "@playwright/experimental-ct-react";
 import { verifyScreenshot } from "../../utils/screenshotHandler.js";
 import {
