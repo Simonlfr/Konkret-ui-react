@@ -1,7 +1,11 @@
 import React from "react";
 import { css } from "styled-components";
-import { styled } from "../../providers/designTokenProvider";
-import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
+import {
+  getTokenPaletteValue,
+  getTokenShadowValue,
+  getTokenStateModifierValue,
+  styled,
+} from "../../providers/designTokenProvider";
 import { ButtonTypography } from "../typography/typography";
 
 type ButtonProps = {
@@ -41,80 +45,44 @@ const StyledBaseButtonCSS = css`
   border: none;
   cursor: pointer;
 `;
+
 const FillButton = styled.button`
   ${StyledBaseButtonCSS}
-  color: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.palette.neutral.lightText
-      : defaultDesignTokens.palette.neutral.lightText};
+  color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "lightText")};
   background-color: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.palette.primary.primaryRef
-      : defaultDesignTokens.palette.primary.primaryRef};
+    getTokenPaletteValue(theme, "primary", "primaryRef")};
   box-shadow: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.shadows.primaryDarkDefault
-      : defaultDesignTokens.shadows.primaryDarkDefault};
+    getTokenShadowValue(theme, "primaryDarkDefault")};
   &:hover {
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.primaryHoverFocusDark
-          : defaultDesignTokens.stateModifiers.primaryHoverFocusDark},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.primaryDarkHoverFocus
-          : defaultDesignTokens.shadows.primaryDarkHoverFocus};
+        getTokenStateModifierValue(theme, "primaryHoverFocusDark")},
+      ${({ theme }) => getTokenShadowValue(theme, "primaryDarkHoverFocus")};
   }
   &:active {
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.primaryPressedDark
-          : defaultDesignTokens.stateModifiers.primaryPressedDark},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.primaryDarkPressed
-          : defaultDesignTokens.shadows.primaryDarkPressed};
+        getTokenStateModifierValue(theme, "primaryPressedDark")},
+      ${({ theme }) => getTokenShadowValue(theme, "primaryDarkPressed")};
   }
 `;
 
 const OutlineButton = styled.button`
   ${StyledBaseButtonCSS}
   background-color: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.palette.neutral.lightText
-      : defaultDesignTokens.palette.neutral.lightText};
+    getTokenPaletteValue(theme, "neutral", "lightText")};
   box-shadow: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.shadows.primaryLightDefault
-      : defaultDesignTokens.shadows.primaryLightDefault};
+    getTokenShadowValue(theme, "primaryLightDefault")};
   border: 1px solid
-    ${({ theme }) =>
-      theme && theme.palette
-        ? theme.palette.primary.primaryTint
-        : defaultDesignTokens.palette.primary.primaryTint};
-  color: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.palette.neutral.link
-      : defaultDesignTokens.palette.neutral.link};
+    ${({ theme }) => getTokenPaletteValue(theme, "primary", "primaryTint")};
+  color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "link")};
   &:hover {
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.primaryHoverFocusLight
-          : defaultDesignTokens.stateModifiers.primaryHoverFocusLight},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.primaryLightHoverFocus
-          : defaultDesignTokens.shadows.primaryLightHoverFocus};
+        getTokenStateModifierValue(theme, "primaryHoverFocusLight")},
+      ${({ theme }) => getTokenShadowValue(theme, "primaryLightHoverFocus")};
   }
   &:active {
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.primaryPressedLight
-          : defaultDesignTokens.stateModifiers.primaryPressedLight},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.primaryLightPressed
-          : defaultDesignTokens.shadows.primaryLightPressed};
+        getTokenStateModifierValue(theme, "primaryPressedLight")},
+      ${({ theme }) => getTokenShadowValue(theme, "primaryLightPressed")};
   }
 `;
 const TextButton = styled.button`
@@ -122,81 +90,40 @@ const TextButton = styled.button`
   box-shadow: none;
   border: 1px solid transparent;
   background-color: transparent;
-  color: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.palette.neutral.link
-      : defaultDesignTokens.palette.neutral.link};
+  color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "link")};
   &:hover {
     background-color: ${({ theme }) =>
-      theme && theme.palette
-        ? theme.palette.neutral.lightText
-        : defaultDesignTokens.palette.neutral.lightText};
+      getTokenPaletteValue(theme, "neutral", "lightText")};
     border: 1px solid
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.palette.primary.primaryTint
-          : defaultDesignTokens.palette.primary.primaryTint};
+      ${({ theme }) => getTokenPaletteValue(theme, "primary", "primaryTint")};
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.primaryHoverFocusLight
-          : defaultDesignTokens.stateModifiers.primaryHoverFocusLight},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.primaryLightHoverFocus
-          : defaultDesignTokens.shadows.primaryLightHoverFocus};
+        getTokenStateModifierValue(theme, "primaryHoverFocusLight")},
+      ${({ theme }) => getTokenShadowValue(theme, "primaryLightHoverFocus")};
   }
   &:active {
     background-color: ${({ theme }) =>
-      theme && theme.palette
-        ? theme.palette.neutral.lightText
-        : defaultDesignTokens.palette.neutral.lightText};
+      getTokenPaletteValue(theme, "neutral", "lightText")};
     border: 1px solid
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.primaryPressedLight
-          : defaultDesignTokens.stateModifiers.primaryPressedLight};
+      ${({ theme }) => getTokenStateModifierValue(theme, "primaryPressedLight")};
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.primaryPressedLight
-          : defaultDesignTokens.stateModifiers.primaryPressedLight},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.primaryLightPressed
-          : defaultDesignTokens.shadows.primaryLightPressed};
+        getTokenStateModifierValue(theme, "primaryPressedLight")},
+      ${({ theme }) => getTokenShadowValue(theme, "primaryLightPressed")};
   }
 `;
 const DestructiveButton = styled.button`
   ${StyledBaseButtonCSS}
-  color: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.palette.neutral.lightText
-      : defaultDesignTokens.palette.neutral.lightText};
+  color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "lightText")};
   background-color: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.palette.error.errorRef
-      : defaultDesignTokens.palette.error.errorRef};
-  box-shadow: ${({ theme }) =>
-    theme && theme.palette
-      ? theme.shadows.errorDarkDefault
-      : defaultDesignTokens.shadows.errorDarkDefault};
+    getTokenPaletteValue(theme, "error", "errorRef")};
+  box-shadow: ${({ theme }) => getTokenShadowValue(theme, "errorDarkDefault")};
   &:hover {
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.errorHoverFocusDark
-          : defaultDesignTokens.stateModifiers.errorHoverFocusDark},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.errorDarkHoverFocus
-          : defaultDesignTokens.shadows.errorDarkHoverFocus};
+        getTokenStateModifierValue(theme, "errorHoverFocusDark")},
+      ${({ theme }) => getTokenShadowValue(theme, "errorDarkHoverFocus")};
   }
   &:active {
     box-shadow: ${({ theme }) =>
-        theme && theme.palette
-          ? theme.stateModifiers.errorPressedDark
-          : defaultDesignTokens.stateModifiers.errorPressedDark},
-      ${({ theme }) =>
-        theme && theme.palette
-          ? theme.shadows.errorDarkPressed
-          : defaultDesignTokens.shadows.errorDarkPressed};
+        getTokenStateModifierValue(theme, "errorPressedDark")},
+      ${({ theme }) => getTokenShadowValue(theme, "errorDarkPressed")};
   }
 `;
