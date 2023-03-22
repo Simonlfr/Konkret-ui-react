@@ -1,7 +1,7 @@
 import { convertToRgba } from "./convertToRGBA";
 import { ColorPaletteType } from "./generateColorPalette";
 
-type StateModifiersType = {
+export type StateModifiersType = {
   primaryHoverFocusLight: string;
   primaryPressedLight: string;
   primaryHoverFocusDark: string;
@@ -12,7 +12,7 @@ type StateModifiersType = {
   errorPressedDark: string;
 };
 
-type ShadowsType = {
+export type ShadowsType = {
   primaryLightDefault: string;
   primaryLightHoverFocus: string;
   primaryLightPressed: string;
