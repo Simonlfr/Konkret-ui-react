@@ -30,7 +30,7 @@ interface NeutralPalette {
   subtleText: string;
   lightText: string;
   link: string;
-  Disabled: string;
+  disabled: string;
   onDisabled: string;
 }
 
