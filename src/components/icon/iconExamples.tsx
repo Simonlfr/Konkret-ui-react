@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useColorPalette } from "../../providers/colorPaletteProvider";
 import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
 import {
   IconClose,

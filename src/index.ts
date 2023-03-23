@@ -85,10 +85,8 @@ import {
   IconTag,
   IconTags,
 } from "./components/icon/icon";
-import {
-  ColorPaletteType,
-  useColorPalette,
-} from "./providers/colorPaletteProvider";
+import { useColorPalette } from "./providers/colorPaletteProvider";
+import { ColorPaletteType } from "./utils/generateColorPalette";
 
 const icons = {
   IconClose,
