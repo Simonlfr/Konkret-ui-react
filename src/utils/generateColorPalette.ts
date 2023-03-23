@@ -95,7 +95,7 @@ export function generateColorPalette(
       subtleText: colorNeutral["0"],
       lightText: colorNeutral["100"],
       link: colorPrimary["0"],
-      Disabled: colorNeutral["90"],
+      disabled: colorNeutral["90"],
       onDisabled: colorNeutral["40"],
     },
   };
