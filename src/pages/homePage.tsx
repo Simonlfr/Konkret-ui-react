@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../components/button/button";
 import { ColorLegend } from "./colorLegend/colorLegend";
-import { IconHeartOutlined } from "../components/icon/icon";
+import { IconSettings } from "../components/icon/icon";
 import { IconExamples } from "../components/icon/iconExamples";
 import { HeadlineMedium } from "../components/typography/typography";
+import { defaultDesignTokens } from "../utils/defaultDesignTokens";
 
 export function HomePage(): JSX.Element {
   return (
@@ -13,10 +14,25 @@ export function HomePage(): JSX.Element {
       <div>
         <HeadlineMedium>Button</HeadlineMedium>
         <ButtonContainer>
-          <Button variant="fill">
-            <IconHeartOutlined />
-            <Button.text>Fill</Button.text>
-          </Button>
+          <Button
+            variant="fill"
+            icon={
+              <IconSettings
+                size={16}
+                color={defaultDesignTokens.palette.neutral.lightText}
+              />
+            }
+            label="Fill"
+          ></Button>
+          <Button
+            variant="fill"
+            icon={
+              <IconSettings
+                size={16}
+                color={defaultDesignTokens.palette.neutral.lightText}
+              />
+            }
+          />
           <Button variant="outline">
             <Button.text>Outline</Button.text>
           </Button>

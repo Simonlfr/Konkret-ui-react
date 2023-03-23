@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from "styled-components";
+import { css, FlattenInterpolation, ThemeProps } from "styled-components";
 import {
   getTokenPaletteValue,
   getTokenShadowValue,
@@ -8,46 +8,63 @@ import {
 } from "../../providers/designTokenProvider";
 import { ButtonTypography } from "../typography/typography";
 
+type ButtonVariant = "fill" | "outline" | "text" | "destructive";
+
 type ButtonProps = {
-  children: React.ReactNode;
-  variant?: "fill" | "outline" | "text" | "destructive";
-  rightIcon?: React.ReactNode;
-  leftIcon?: React.ReactNode;
+  children?: React.ReactNode;
+  variant: ButtonVariant;
+  label?: string;
+  icon?: React.ReactNode;
+  onClick?: () => void;
 };
 
 export function Button(props: ButtonProps): JSX.Element {
-  const { children, rightIcon, leftIcon, variant = "fill" } = props;
+  const { children, label, icon, onClick } = props;
 
-  const innerContent = (
-    <>
-      {leftIcon}
+  return (
+    <StyledBaseButton onClick={onClick} {...props}>
+      {icon}
+      {label && <ButtonTypography>{props.label}</ButtonTypography>}
       {children}
-      {rightIcon}
-    </>
+    </StyledBaseButton>
   );
-
-  if (variant === "fill") return <FillButton>{innerContent}</FillButton>;
-  if (variant === "outline")
-    return <OutlineButton>{innerContent}</OutlineButton>;
-  if (variant === "text") return <TextButton>{innerContent}</TextButton>;
-  return <DestructiveButton>{innerContent}</DestructiveButton>;
 }
 
 Button.text = ButtonTypography;
 
-const StyledBaseButtonCSS = css`
+const StyledBaseButton = styled.button<ButtonProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 12px;
   border-radius: 8px;
+  height: 32px;
   border: none;
   cursor: pointer;
+  gap: 0.375rem;
+  ${({ variant }) => getVariant(variant)}
+  ${({ label, icon }) => {
+    if (label && !icon) {
+      return css`
+        padding: 8px 12px;
+      `;
+    }
+
+    if (!label && icon) {
+      return css`
+        padding: 7.5px;
+      `;
+    }
+
+    if (label && icon) {
+      return css`
+        padding: 8px 12px 8px 9px;
+      `;
+    }
+  }}
 `;
 
-const FillButton = styled.button`
-  ${StyledBaseButtonCSS}
+const FillButton = css`
   color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "lightText")};
   background-color: ${({ theme }) =>
     getTokenPaletteValue(theme, "primary", "primaryRef")};
@@ -65,8 +82,7 @@ const FillButton = styled.button`
   }
 `;
 
-const OutlineButton = styled.button`
-  ${StyledBaseButtonCSS}
+const OutlineButton = css`
   background-color: ${({ theme }) =>
     getTokenPaletteValue(theme, "neutral", "lightText")};
   box-shadow: ${({ theme }) =>
@@ -85,8 +101,7 @@ const OutlineButton = styled.button`
       ${({ theme }) => getTokenShadowValue(theme, "primaryLightPressed")};
   }
 `;
-const TextButton = styled.button`
-  ${StyledBaseButtonCSS}
+const TextButton = css`
   box-shadow: none;
   border: 1px solid transparent;
   background-color: transparent;
@@ -110,8 +125,7 @@ const TextButton = styled.button`
       ${({ theme }) => getTokenShadowValue(theme, "primaryLightPressed")};
   }
 `;
-const DestructiveButton = styled.button`
-  ${StyledBaseButtonCSS}
+const DestructiveButton = css`
   color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "lightText")};
   background-color: ${({ theme }) =>
     getTokenPaletteValue(theme, "error", "errorRef")};
@@ -127,3 +141,12 @@ const DestructiveButton = styled.button`
       ${({ theme }) => getTokenShadowValue(theme, "errorDarkPressed")};
   }
 `;
+
+const getVariant = (
+  variant: ButtonVariant
+): FlattenInterpolation<ThemeProps<any>> => {
+  if (variant === "fill") return FillButton;
+  if (variant === "outline") return OutlineButton;
+  if (variant === "text") return TextButton;
+  return DestructiveButton;
+};
