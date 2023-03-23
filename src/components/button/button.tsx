@@ -15,6 +15,7 @@ type ButtonProps = {
   variant: ButtonVariant;
   label?: string;
   icon?: React.ReactNode;
+  disabled?: boolean;
   onClick?: () => void;
 };
 
@@ -42,7 +43,7 @@ const StyledBaseButton = styled.button<ButtonProps>`
   border: none;
   cursor: pointer;
   gap: 0.375rem;
-  ${({ variant }) => getVariant(variant)}
+  ${({ variant, disabled }) => getVariant(variant, disabled)}
   ${({ label, icon }) => {
     if (label && !icon) {
       return css`
@@ -142,9 +143,24 @@ const DestructiveButton = css`
   }
 `;
 
+const DisabledButton = css`
+  cursor: not-allowed;
+  background-color: ${({ theme }) =>
+    getTokenPaletteValue(theme, "neutral", "disabled")};
+  color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "onDisabled")};
+`;
+const DisabledTextButton = css`
+  cursor: not-allowed;
+  background-color: transparent;
+  color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "onDisabled")};
+`;
+
 const getVariant = (
-  variant: ButtonVariant
+  variant: ButtonVariant,
+  disabled?: boolean
 ): FlattenInterpolation<ThemeProps<any>> => {
+  if (disabled && variant === "text") return DisabledTextButton;
+  if (disabled) return DisabledButton;
   if (variant === "fill") return FillButton;
   if (variant === "outline") return OutlineButton;
   if (variant === "text") return TextButton;
