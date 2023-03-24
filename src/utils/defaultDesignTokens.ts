@@ -1,5 +1,7 @@
-import { defaultColorRange } from "../providers/designTokenProvider";
-import { generateColorPalette } from "./generateColorPalette";
+import {
+  defaultColorRange,
+  generateColorPalette,
+} from "./generateColorPalette";
 import { generateDesignTokens } from "./generateDesignTokens";
 
 const colorPalette = generateColorPalette(

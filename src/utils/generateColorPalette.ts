@@ -49,6 +49,10 @@ function convertArrayToObject(colors: ColorShade[]): { [key: string]: string } {
   return colorObject;
 }
 
+export const defaultColorRange: number[] = [
+  -80, -60, -40, -20, 0, 20, 40, 60, 80, 90, 95, 100,
+];
+
 export function generateColorPalette(
   primary: string,
   secondary: string,
