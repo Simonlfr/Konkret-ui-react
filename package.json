@@ -8,7 +8,7 @@
   ],
   "types": "index.ts",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "rm -rf dist && tsc && vite build",
     "preview": "vite preview",
     "test:playwright": "playwright test -c playwright-ct.config.ts",
