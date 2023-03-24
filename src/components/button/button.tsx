@@ -38,9 +38,12 @@ export function Button(props: ButtonProps): JSX.Element {
   );
 
   if (href && href !== "") {
-    const url = props.disabled ? "#" : href;
     return (
-      <StyledLinkButton href={url} {...rest}>
+      <StyledLinkButton
+        tabIndex={props.disabled ? -1 : props.tabIndex}
+        href={props.disabled ? "#" : href}
+        {...rest}
+      >
         {innerContent}
       </StyledLinkButton>
     );
@@ -48,8 +51,6 @@ export function Button(props: ButtonProps): JSX.Element {
 
   return <StyledButton {...rest}>{innerContent}</StyledButton>;
 }
-
-Button.text = ButtonTypography;
 
 const BaseButtonStyle = css<ButtonProps>`
   display: flex;
