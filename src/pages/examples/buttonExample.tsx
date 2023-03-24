@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../../components/button/button";
-import { IconSettings } from "../../components/icon/icon";
+import { IconDelete, IconSettings } from "../../components/icon/icon";
 import { SubtitleSmall } from "../../components/typography/typography";
 import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
 
@@ -193,7 +193,7 @@ export function ButtonExample(): JSX.Element {
           onClick={() => alert("Error button")}
           variant="destructive"
           icon={
-            <IconSettings
+            <IconDelete
               size={16}
               color={defaultDesignTokens.palette.neutral.lightText}
             />
@@ -204,7 +204,7 @@ export function ButtonExample(): JSX.Element {
           onClick={() => alert("Error button")}
           variant="destructive"
           icon={
-            <IconSettings
+            <IconDelete
               size={16}
               color={defaultDesignTokens.palette.neutral.lightText}
             />
@@ -221,7 +221,7 @@ export function ButtonExample(): JSX.Element {
           variant="destructive"
           disabled
           icon={
-            <IconSettings
+            <IconDelete
               size={16}
               color={defaultDesignTokens.palette.neutral.onDisabled}
             />
@@ -233,7 +233,7 @@ export function ButtonExample(): JSX.Element {
           variant="destructive"
           disabled
           icon={
-            <IconSettings
+            <IconDelete
               size={16}
               color={defaultDesignTokens.palette.neutral.onDisabled}
             />
