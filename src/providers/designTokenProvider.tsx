@@ -9,7 +9,10 @@ import {
 import { ColorProvider, useColorPalette } from "./colorPaletteProvider";
 import baseStyled, { ThemedStyledInterface } from "styled-components";
 import { defaultDesignTokens } from "../utils/defaultDesignTokens";
-import { ColorPaletteType } from "../utils/generateColorPalette";
+import {
+  ColorPaletteType,
+  defaultColorRange,
+} from "../utils/generateColorPalette";
 
 export const styled = baseStyled as ThemedStyledInterface<DesignTokenType>;
 
@@ -19,10 +22,6 @@ export type RefColors = {
   error: string;
   neutral: string;
 };
-
-export const defaultColorRange: number[] = [
-  -80, -60, -40, -20, 0, 20, 40, 60, 80, 90, 95, 100,
-];
 
 export const DesignTokenProvider = ({
   children,
