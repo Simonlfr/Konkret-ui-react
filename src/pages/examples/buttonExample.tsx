@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../../components/button/button";
 import { IconSettings } from "../../components/icon/icon";
+import { SubtitleSmall } from "../../components/typography/typography";
 import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
 
 export function ButtonExample(): JSX.Element {
   return (
     <>
+      <SubtitleSmall>Fill</SubtitleSmall>
       <ButtonContainer>
         <Button
           onClick={() => alert("Fill button")}
@@ -64,6 +66,7 @@ export function ButtonExample(): JSX.Element {
           }
         />
       </ButtonContainer>
+      <SubtitleSmall>Outline</SubtitleSmall>
       <ButtonContainer>
         <Button
           onClick={() => alert("Outline button")}
@@ -121,6 +124,7 @@ export function ButtonExample(): JSX.Element {
           }
         />
       </ButtonContainer>
+      <SubtitleSmall>Text</SubtitleSmall>
       <ButtonContainer>
         <Button
           onClick={() => alert("Text button")}
@@ -178,6 +182,7 @@ export function ButtonExample(): JSX.Element {
           }
         />
       </ButtonContainer>
+      <SubtitleSmall>Destructive</SubtitleSmall>
       <ButtonContainer>
         <Button
           onClick={() => alert("Error button")}
@@ -233,6 +238,21 @@ export function ButtonExample(): JSX.Element {
               color={defaultDesignTokens.palette.neutral.onDisabled}
             />
           }
+        />
+      </ButtonContainer>
+      <SubtitleSmall>As Link</SubtitleSmall>
+      <ButtonContainer>
+        <Button variant="fill" href="https://konkret-ui.com/" label="As Link" />
+        <Button
+          variant="outline"
+          href="https://konkret-ui.com/"
+          label="As Link"
+        />
+        <Button variant="text" href="https://konkret-ui.com/" label="As Link" />
+        <Button
+          variant="destructive"
+          href="https://konkret-ui.com/"
+          label="As Link"
         />
       </ButtonContainer>
     </>
