@@ -26,21 +26,26 @@ type ButtonProps = {
 };
 
 export function Button(props: ButtonProps): JSX.Element {
-  const { children, label, icon, href } = props;
+  const { children, href, ...rest } = props;
 
   const innerContent = (
     <>
-      {icon}
-      {label && <ButtonTypography>{props.label}</ButtonTypography>}
+      {props.icon}
+      {props.label && <ButtonTypography>{props.label}</ButtonTypography>}
       {children}
     </>
   );
 
   if (href && href !== "") {
-    return <StyledLinkButton {...props}>{innerContent}</StyledLinkButton>;
+    const url = props.disabled ? "#" : href;
+    return (
+      <StyledLinkButton href={url} {...rest}>
+        {innerContent}
+      </StyledLinkButton>
+    );
   }
 
-  return <StyledButton {...props}>{innerContent}</StyledButton>;
+  return <StyledButton {...rest}>{innerContent}</StyledButton>;
 }
 
 Button.text = ButtonTypography;

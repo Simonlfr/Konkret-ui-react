@@ -254,6 +254,12 @@ export function ButtonExample(): JSX.Element {
           href="https://konkret-ui.com/"
           label="As Link"
         />
+        <Button
+          variant="fill"
+          disabled
+          href="https://konkret-ui.com/"
+          label="As Link"
+        />
       </ButtonContainer>
     </>
   );
