@@ -11,29 +11,46 @@ import { ButtonTypography } from "../typography/typography";
 type ButtonVariant = "fill" | "outline" | "text" | "destructive";
 
 type ButtonProps = {
-  children?: React.ReactNode;
   variant: ButtonVariant;
+  children?: React.ReactNode;
   label?: string;
   icon?: React.ReactNode;
   disabled?: boolean;
+  fullWidth?: boolean;
+  style?: React.CSSProperties;
+  className?: string;
   onClick?: () => void;
+  href?: string;
+  "aria-label"?: string;
+  "aria-labelledby"?: string;
 };
 
 export function Button(props: ButtonProps): JSX.Element {
-  const { children, label, icon, onClick } = props;
+  const { children, href, ...rest } = props;
 
-  return (
-    <StyledBaseButton onClick={onClick} {...props}>
-      {icon}
-      {label && <ButtonTypography>{props.label}</ButtonTypography>}
+  const innerContent = (
+    <>
+      {props.icon}
+      {props.label && <ButtonTypography>{props.label}</ButtonTypography>}
       {children}
-    </StyledBaseButton>
+    </>
   );
+
+  if (href && href !== "") {
+    const url = props.disabled ? "#" : href;
+    return (
+      <StyledLinkButton href={url} {...rest}>
+        {innerContent}
+      </StyledLinkButton>
+    );
+  }
+
+  return <StyledButton {...rest}>{innerContent}</StyledButton>;
 }
 
 Button.text = ButtonTypography;
 
-const StyledBaseButton = styled.button<ButtonProps>`
+const BaseButtonStyle = css<ButtonProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -43,6 +60,7 @@ const StyledBaseButton = styled.button<ButtonProps>`
   border: none;
   cursor: pointer;
   gap: 0.375rem;
+  ${({ fullWidth }) => fullWidth && "width: 100%"};
   ${({ variant, disabled }) => getVariant(variant, disabled)}
   ${({ label, icon }) => {
     if (label && !icon) {
@@ -63,6 +81,16 @@ const StyledBaseButton = styled.button<ButtonProps>`
       `;
     }
   }}
+`;
+
+const StyledButton = styled.button`
+  ${BaseButtonStyle}
+`;
+
+const StyledLinkButton = styled.a`
+  ${BaseButtonStyle}
+  text-decoration: none;
+  box-sizing: border-box;
 `;
 
 const FillButton = css`
