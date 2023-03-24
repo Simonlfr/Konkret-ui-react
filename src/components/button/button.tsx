@@ -58,7 +58,7 @@ const BaseButtonStyle = css<ButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  height: 32px;
+  min-height: 32px;
   border: none;
   cursor: pointer;
   gap: 0.375rem;
@@ -79,7 +79,7 @@ const BaseButtonStyle = css<ButtonProps>`
 
     if (label && icon) {
       return css`
-        padding: 8px 12px 8px 9px;
+        padding: 4px 8px;
       `;
     }
   }}
