@@ -23,6 +23,7 @@ type ButtonProps = {
   href?: string;
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  tabIndex?: number;
 };
 
 export function Button(props: ButtonProps): JSX.Element {
