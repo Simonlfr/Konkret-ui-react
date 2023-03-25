@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../components/button/button";
+import { Button, SplitButton } from "../../components/button/button";
 import { IconDelete, IconSettings } from "../../components/icon/icon";
 import { SubtitleSmall } from "../../components/typography/typography";
 import { defaultDesignTokens } from "../../utils/defaultDesignTokens";
@@ -259,6 +259,14 @@ export function ButtonExample(): JSX.Element {
           disabled
           href="https://konkret-ui.com/"
           label="As Link"
+        />
+      </ButtonContainer>
+      <SubtitleSmall>SplitButton</SubtitleSmall>
+      <ButtonContainer>
+        <SplitButton
+          label="SplitButton"
+          onLabelClick={() => {}}
+          onIconClick={() => {}}
         />
       </ButtonContainer>
     </>

@@ -1,3 +1,7 @@
 :root {
   font-family: "Noto Sans";
 }
+
+:focus-visible {
+  outline: none;
+}

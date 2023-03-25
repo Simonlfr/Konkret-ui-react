@@ -6,27 +6,46 @@ import {
   getTokenStateModifierValue,
   styled,
 } from "../../providers/designTokenProvider";
+import { IconContext } from "../icon/icon";
 import { ButtonTypography } from "../typography/typography";
 
 type ButtonVariant = "fill" | "outline" | "text" | "destructive";
 
-type ButtonProps = {
+type BaseButtonProps = {
   variant: ButtonVariant;
   children?: React.ReactNode;
   label?: string;
-  icon?: React.ReactNode;
-  disabled?: boolean;
   fullWidth?: boolean;
   style?: React.CSSProperties;
   className?: string;
-  onClick?: () => void;
-  href?: string;
-  "aria-label"?: string;
-  "aria-labelledby"?: string;
-  tabIndex?: number;
+  disabled?: boolean;
+  icon?: React.ReactNode;
 };
 
-export function Button(props: ButtonProps): JSX.Element {
+type ButtonProps = {
+  href?: string;
+  onClick?: () => void;
+  tabIndex?: number;
+  "aria-label"?: string;
+  "aria-labelledby"?: string;
+};
+
+type SplitButtonProps = {
+  onLeftClick?: () => void;
+  onRightClick?: () => void;
+  leftTabIndex?: number;
+  rightTabIndex?: number;
+  leftAriaLabel?: string;
+  rightAriaLabel?: string;
+  leftAriaLabelledBy?: string;
+  rightAriaLabelledBy?: string;
+  leftStyle?: React.CSSProperties;
+  rightStyle?: React.CSSProperties;
+  leftClassName?: string;
+  rightClassName?: string;
+};
+
+export function Button(props: BaseButtonProps & ButtonProps): JSX.Element {
   const { children, href, ...rest } = props;
 
   const innerContent = (
@@ -52,7 +71,24 @@ export function Button(props: ButtonProps): JSX.Element {
   return <StyledButton {...rest}>{innerContent}</StyledButton>;
 }
 
-const BaseButtonStyle = css<ButtonProps>`
+export function SplitButton(props: SplitButtonProps & BaseButtonProps) {
+  const { onLeftClick, onRightClick } = props;
+  return (
+    <SplitButtonWrapper>
+      <SplitButtonLabel onClick={onLeftClick}>
+        {props.icon}
+        {props.label && <ButtonTypography>{props.label}</ButtonTypography>}
+        {props.children}
+      </SplitButtonLabel>
+      <SplitButtonGap />
+      <SplitButtonIcon onClick={onRightClick}>
+        <IconContext />
+      </SplitButtonIcon>
+    </SplitButtonWrapper>
+  );
+}
+
+const BaseButtonStyle = css<BaseButtonProps & ButtonProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -85,6 +121,32 @@ const BaseButtonStyle = css<ButtonProps>`
   }}
 `;
 
+const SplitButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const SplitButtonLabel = styled.button`
+  ${BaseButtonStyle}
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+`;
+
+const SplitButtonIcon = styled.button`
+  padding: 8px;
+  background-color: #f8f9fa;
+  border: none;
+  cursor: pointer;
+`;
+
+const SplitButtonGap = styled.div`
+  width: 1px;
+  height: 2rem;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px rgba(78, 75, 251, 0.24);
+`;
+
 const StyledButton = styled.button`
   ${BaseButtonStyle}
 `;
@@ -101,12 +163,14 @@ const FillButton = css`
     getTokenPaletteValue(theme, "primary", "primaryRef")};
   box-shadow: ${({ theme }) =>
     getTokenShadowValue(theme, "primaryDarkDefault")};
-  &:hover {
+  :hover,
+  :focus,
+  :focus-visible {
     box-shadow: ${({ theme }) =>
         getTokenStateModifierValue(theme, "primaryHoverFocusDark")},
       ${({ theme }) => getTokenShadowValue(theme, "primaryDarkHoverFocus")};
   }
-  &:active {
+  :active {
     box-shadow: ${({ theme }) =>
         getTokenStateModifierValue(theme, "primaryPressedDark")},
       ${({ theme }) => getTokenShadowValue(theme, "primaryDarkPressed")};
@@ -121,12 +185,14 @@ const OutlineButton = css`
   border: 1px solid
     ${({ theme }) => getTokenPaletteValue(theme, "primary", "primaryTint")};
   color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "link")};
-  &:hover {
+  :hover,
+  :focus,
+  :focus-visible {
     box-shadow: ${({ theme }) =>
         getTokenStateModifierValue(theme, "primaryHoverFocusLight")},
       ${({ theme }) => getTokenShadowValue(theme, "primaryLightHoverFocus")};
   }
-  &:active {
+  :active {
     box-shadow: ${({ theme }) =>
         getTokenStateModifierValue(theme, "primaryPressedLight")},
       ${({ theme }) => getTokenShadowValue(theme, "primaryLightPressed")};
@@ -137,7 +203,9 @@ const TextButton = css`
   border: 1px solid transparent;
   background-color: transparent;
   color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "link")};
-  &:hover {
+  :hover,
+  :focus,
+  :focus-visible {
     background-color: ${({ theme }) =>
       getTokenPaletteValue(theme, "neutral", "lightText")};
     border: 1px solid
@@ -146,7 +214,7 @@ const TextButton = css`
         getTokenStateModifierValue(theme, "primaryHoverFocusLight")},
       ${({ theme }) => getTokenShadowValue(theme, "primaryLightHoverFocus")};
   }
-  &:active {
+  :active {
     background-color: ${({ theme }) =>
       getTokenPaletteValue(theme, "neutral", "lightText")};
     border: 1px solid
@@ -161,12 +229,14 @@ const DestructiveButton = css`
   background-color: ${({ theme }) =>
     getTokenPaletteValue(theme, "error", "errorRef")};
   box-shadow: ${({ theme }) => getTokenShadowValue(theme, "errorDarkDefault")};
-  &:hover {
+  :hover,
+  :focus,
+  :focus-visible {
     box-shadow: ${({ theme }) =>
         getTokenStateModifierValue(theme, "errorHoverFocusDark")},
       ${({ theme }) => getTokenShadowValue(theme, "errorDarkHoverFocus")};
   }
-  &:active {
+  :active {
     box-shadow: ${({ theme }) =>
         getTokenStateModifierValue(theme, "errorPressedDark")},
       ${({ theme }) => getTokenShadowValue(theme, "errorDarkPressed")};
@@ -185,7 +255,7 @@ const DisabledTextButton = css`
   color: ${({ theme }) => getTokenPaletteValue(theme, "neutral", "onDisabled")};
 `;
 
-const getVariant = (
+export const getVariant = (
   variant: ButtonVariant,
   disabled?: boolean
 ): FlattenInterpolation<ThemeProps<any>> => {
