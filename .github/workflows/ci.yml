@@ -65,12 +65,12 @@ jobs:
                   key: ${{ runner.os }}-${{ hashFiles('client/yarn.lock') }}
 
             - name: Verify playwright dependencies
-              working-directory: ./client
+              working-directory: ${{ github.workspace }}/client
               run: yarn playwright install --with-deps
 
             - name: Run tests
-              working-directory: ./client
-              # 'HOME=root' is a workaround for firefox runnning in docker
+              working-directory: ${{ github.workspace }}/client
+              # 'HOME=root' is a workaround for firefox running in docker
               run: HOME=root yarn test --project=${{ matrix.browser }}
 
             - name: Save test-results as artifact
