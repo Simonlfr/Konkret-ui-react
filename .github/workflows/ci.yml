@@ -62,14 +62,12 @@ jobs:
               id: cache
               with:
                   path: client/node_modules
-                  key: ${{ runner.os }}-${{ hashFiles('client/yarn.lock') }}
+                  key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
             - name: Verify playwright dependencies
-              working-directory: ${{ github.workspace }}/client
               run: yarn playwright install --with-deps
 
             - name: Run tests
-              working-directory: ${{ github.workspace }}/client
               # 'HOME=root' is a workaround for firefox running in docker
               run: HOME=root yarn test --project=${{ matrix.browser }}
 
@@ -78,4 +76,4 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                   name: test-results
-                  path: client/test-results/**/*
+                  path: test-results/**/*
