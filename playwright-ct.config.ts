@@ -56,7 +56,7 @@ export default defineConfig({
         },
 
         {
-            name: "iPhone 13",
+            name: "iphone13",
             use: {
                 ...devices["iPhone 13"],
                 contextOptions: { reducedMotion: "reduce" },
