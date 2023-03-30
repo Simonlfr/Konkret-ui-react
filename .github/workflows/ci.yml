@@ -63,6 +63,7 @@ jobs:
               id: cache
               with:
                   path: client/node_modules
+                  fail-on-cache-miss: true
                   key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
             - name: Verify playwright dependencies
