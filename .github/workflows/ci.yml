@@ -64,7 +64,7 @@ jobs:
               uses: actions/cache@v3
               id: cache
               with:
-                  path: client/node_modules
+                  path: node_modules
                   fail-on-cache-miss: true
                   key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
