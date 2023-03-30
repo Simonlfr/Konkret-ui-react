@@ -56,7 +56,8 @@ jobs:
 
             - name: Install Yarn
               run: npm install -g yarn
-
+        - name: Install Zstd (required for caching)
+           run: apt-get update && apt-get install -y zstd
             - name: Fetch node_modules cache
               uses: actions/cache@v3
               id: cache
